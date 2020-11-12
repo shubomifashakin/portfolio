@@ -1,0 +1,249 @@
+<!DOCYTPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+        
+        <!--custom styles-->
+        <link rel="stylesheet" href="css/booking.css">
+        
+         <!--google fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Peta&family=Syne&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lexend+Peta&family=Syne&display=swap" rel="stylesheet"> 
+
+           <!--fontawesome icons-->   
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <title>Booking</title>
+        
+    </head>
+    
+<body>
+    
+    <nav class="navbar" id="myTopnav">
+        <a class="brand-name" href="#">HZ</a>
+        <a href="javascript:void(0);" class="nav-icon" id="open" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+        <a href="javascript:void(0);" class="nav-icon" id="close" onclick="myFunction()"><i class="fa fa-times"></i></a>
+        <div class="nav-right" >
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Rooms</a>
+            <a href="#" class="nav-link">Facilities</a>
+            <a href="#" class="nav-link">Contact</a>
+            <a href="#" class="nav-link  book-btn">Book Now</a>
+        </div>
+    
+    </nav><!--nav-->
+        <div class="container"><!--container-->
+        
+            <div class="cover">
+                
+                <img src="images/hotel5.1.jpg" width="100%" height="100%">
+                <h1>BOOKING</h1>
+            </div><!--cover-->
+            
+            
+            <section>
+                
+               <div class="icons" style="text-align:center; padding:50px">
+                
+           <a href="#" class="icon" onclick="myRooms()" ><i class="fa fa-bed" ></i></a><div class="line"></div>
+              <a href="#" class="icon" onclick="myInfo()" ><i class="fa fa-users" ></i></a><div class="line"></div>
+             <a href="#" class="icon" onclick="myPayment()" ><i class="fa fa-credit-card-alt" ></i></a><div class="line"></div>
+            <a href="#" class="icon" onclick="myFunction()"><i class="fa fa-repeat" ></i></a>
+              </div>
+                
+            </section>
+            
+            
+            <section id="select-rooms" class="rms">
+            
+                <div class="room-select">
+                    <h2 style="text-align: center;font-family: kufam">SEARCH OUR ROOMS</h2>
+                    
+                   <form action="" method="post">
+                     <input type="text" class="form-input" placeholder="check in">
+                    
+                    <input type="text" class="form-input" placeholder="check out">
+                    
+                    <select class="form-input">
+                        <option disabled selected>Rooms</option>
+                        <option>1 room with king size bed</option>
+                        <option>2 rooms with normal beds</option>
+                        <option>2 rooms with king size bed</option>
+                    </select>
+                    
+                    <select class="form-input">
+                        <option disabled selected>Adult</option>
+                        <option>1 adult</option>
+                        <option>2 adults</option>
+                        <option>3 adults</option>
+                    </select>
+                    
+                    <select class="form-input">
+                        <option disabled selected>Child</option>
+                        <option>A Child</option>
+                        <option>2 Children</option>
+                        <option>3 Children</option>
+                    </select>
+                    
+                    <div style="text-align:center">
+                         <button class="room-btn" type="submit">Check Availability</button>
+                    </div><!--text align-->
+                       
+                   </form>
+                    
+                </div><!--room select left-->
+                
+                <!--room select left-->
+                <div class="room-select-2">
+                    <h2>Available Rooms</h2>
+                    
+                   <div class="booking-container room-1">
+                         <div class="image-container image-1">
+                            <img src="images/hotel1.jpg" height="100%" width="100%">
+                            <div class="room-price">
+                            $220/NIGHT
+                            </div><!--room caption-->
+                        </div><!--image container-->  
+                       <h2 class="room-info-header">Standard Room</h2>
+                       <div class="room-info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum ipsum ac magna lacinia, a porttitor est varius.</div>
+                       
+                       <button class="select-room-btn" type="submit">Select Room</button>
+                  </div><!--room-1-->
+                    
+                     <div class="booking-container room-2">
+                         <div class="image-container image-1">
+                            <img src="images/hotel9.jpg" height="100%" width="100%">
+                            <div class="room-price">
+                            $320/NIGHT
+                            </div><!--room caption-->
+                        </div><!--image container--> 
+                          <h2 class="room-info-header">Kings Room</h2>
+                       <div class="room-info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum ipsum ac magna lacinia, a porttitor est varius.</div>
+                         
+                        <button class="select-room-btn" type="submit">Select Room</button>
+                  </div><!--room-3-->
+                    
+                    <div class="booking-container room-3">
+                         <div class="image-container image-3">
+                            <img src="images/hotel11.jpg" height="100%" width="100%">
+                            <div class="room-price">
+                            $470/NIGHT
+                            </div><!--room caption-->
+                        </div><!--image container-->  
+                       <h2 class="room-info-header">Queens Room</h2>
+                       <div class="room-info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum ipsum ac magna lacinia, a porttitor est varius.</div>
+                       
+                       <button class="select-room-btn" type="submit">Select Room</button>
+                  </div><!--room-3-->
+                    
+                     <div class="booking-container room-4">
+                         <div class="image-container image-4">
+                            <img src="images/hotel10.jpg" height="100%" width="100%">
+                            <div class="room-price">
+                            $500/NIGHT
+                            </div><!--room caption-->
+                        </div><!--image container--> 
+                          <h2 class="room-info-header">Family Room</h2>
+                       <div class="room-info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum ipsum ac magna lacinia, a porttitor est varius.</div>
+                         
+                        <button class="select-room-btn" type="submit">Select Room</button>
+                  </div><!--room-4-->
+                    
+                </div><!--room select 2-->
+                
+            </section><!--select rooms-->
+            
+            <section id="myInfo" class="info-section"><!--myInfo-->
+                <div class="info-left">
+                    <h2 style="text-align: center;">BOOKING DETAILS</h2>
+                    
+                    <div class="image-container-2">
+                        <img src="images/hotel4.jpg" height="100%" width="100%">
+                    </div><!--image container 2-->
+                    
+                <h2 style="margin:20px 0 0 25px;">Standard Room</h2>
+                    <hr>
+                    
+                    <div class="info-text-container">
+                        <div class="info-text">Check In: 17, June 2020</div>
+                        <div class="info-text">Check Out: 17, June 2020</div>
+                        <div class="info-text">Rooms: 1</div>
+                    </div><!--info text container-->
+                    <hr>
+                    <h2 style="margin-left:20px;">Total: $220.00</h2>
+                </div><!--info-left-->
+                
+                <div class="info-right"><!--info right-->
+                    
+                    <h2>Personal Information</h2>
+                    
+                    <input type="text" placeholder="First name" class="form-input"> <input type="text" placeholder="LastName" class="form-input">
+                    
+                      <input type="text" placeholder="Address" class="form-input"> <input type="text" placeholder="City" class="form-input">
+                     <input type="text" placeholder="State" class="form-input"> <input type="text" placeholder="Country" class="form-input">
+                     <input type="text" placeholder="Email Address" class="form-input"> <input type="text" placeholder="Phone Number" class="form-input">
+                     <input type="text" placeholder="Password" class="form-input"> <input type="text" placeholder="Confirm Password" class="form-input">
+                    
+                    <p class="t&c-text">By Signing up, you agree with our terms and conditions <input type="checkbox"></p>
+                    
+                   <div class="buttons">
+                         <button class="info-btn previous" type="submit">Previous</button>
+                        <button class="info-btn save" type="submit">Save and Continue</button>
+                    </div>
+                
+                </div><!--info right-->
+            </section><!--myinfo-->    
+            
+            <section id="payment-info" class="payment">
+                
+                 <div class="payment-left">
+                    <h2 style="text-align: center;">BOOKING DETAILS</h2>
+                    
+                    <div class="image-container-2">
+                        <img src="images/hotel4.jpg" height="100%" width="100%">
+                    </div><!--image container 2-->
+                    
+                <h2 style="margin:20px 0 0 25px;">Standard Room</h2>
+                    <hr>
+                    
+                    <div class="payment-text-container">
+                        <div class="info-text">Check In: 17, June 2020</div>
+                        <div class="info-text">Check Out: 17, June 2020</div>
+                        <div class="info-text">Rooms: 1</div>
+                    </div><!--info text container-->
+                    <hr>
+                    <p style="margin-left:20px;">Your Address: 123 Ave.Street Nigeria</p>
+                </div><!--info-left-->
+                
+              <div class="payment-right"><!--info right-->
+                    
+                    <h2>Payment Information</h2>
+                    
+                    <input type="text" placeholder="Card Number" class="form-input"> 
+                    <input type="text" placeholder="CVV" class="form-input">
+                    <input type="text" placeholder="Expiry Date(month)" class="form-input"> 
+                    <input type="text" placeholder="Expiry Date(Year)" class="form-input">
+                   
+        
+                    <p class="t&c-text">By Signing up, you agree with our terms and conditions <input type="checkbox"></p>
+                    
+                   <div class="buttons">
+                         <button class="info-btn previous" type="submit">Previous</button>
+                        <button class="info-btn save" type="submit">Save and Continue</button>
+                    </div>
+                
+                </div><!--payment right-->
+            </section><!--payment-->
+            
+        </div><!--container-->
+        
+    
+    <script src="js/booking.js"></script>
+</body>
+
+</html>

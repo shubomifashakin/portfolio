@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+        <link rel="stylesheet" href="css/tipcalculator.css">
+
+        <!--normalize-->
+        <link rel="stylesheet" href="css/normalize.css">
+        
+        <!--line icons-->
+        <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+
+        <!--google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Peta&family=Syne&display=swap" rel="stylesheet"> 
+        
+         <!--fontawesome icons-->   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <script src="https://kit.fontawesome.com/0445f75543.js" crossorigin="anonymous"></script>
+
+        <title>Tip Calculator</title>
+
+    </head>
+
+<body>
+            <div class="container">
+
+                <div class="content">
+                    <h2>TIP CALCULATOR</h2>
+
+                    <div class="bill-amount">
+                        <h4>How much is the bill?</h4>
+                      $<input type="text" class="input-box" placeholder="enter bill amount" id="billamount">
+                    </div><!--bill amount-->
+    
+                    <div class="service">
+                        <h4>Rate Your Service</h4>
+                        <select class="input-box" id="servicequality">
+                            <option disabled selected value="0">--Rate Your Service--</option>
+                            <option value="0.05">5%---Okay</option>
+                            <option value="0.10">10%---Good</option>
+                            <option value="0.15">15%---Great</option>
+                            <option value="0.20">20%---Splendid</option>
+                        </select>
+                    </div><!--service-->
+    
+                    <div class="people">
+                        <h4>How Many People Are Sharing The Bill?</h4>
+                        <input type="text" min="1" value="1" id="totalpeople" class="input-box">people
+                    </div>
+    
+                    <button id="calculate" onclick="calculatetip()" type="submit">CALCULATE</button>
+    
+                    <div id="totaltip">
+                        <sup>$</sup><span id="tip">0.00</span>
+                        <small id="each">Each</small>
+                    </div>
+    
+                </div>
+              
+            </div>
+
+                <script src="js/tipcalculator.js"></script>
+</body>
+
+
+</html>
