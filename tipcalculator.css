@@ -1,0 +1,131 @@
+body{
+    margin:0;
+    padding:0;
+    background:url(../images/calculator.jpg);
+    background-position:center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+@media screen and (max-width:1080px){
+    body{
+        background:black;
+    }
+}
+
+body div.container{
+    margin:0 auto;
+    background:linear-gradient(black,blue);
+    background-position:center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow:0 0 15px black;
+    width:400px;
+    height:550px;
+    color:white;
+    border-radius:10px;
+    margin-top:60px;
+}
+
+@media screen and (max-width:1080px){
+    body div.container{
+        box-shadow:0 0 10px darkcyan;
+    }
+}
+
+body div.container h2{
+    text-align:center;
+    font-family: "lexend peta";
+    padding-top:20px;
+}
+
+body div.container .bill-amount{
+    font-family:"lexend peta";
+    padding-left:15px;
+    padding-top:10px;
+    font-size:13px;
+}
+
+body div.container .bill-amount h4{
+    margin-bottom:5px;
+}
+
+body div.container .bill-amount .input-box{
+    border-radius:15px;
+    border:solid 1px lightskyblue;
+    height:30px;
+    outline:none;
+}
+
+body div.container .service{
+    font-family:"lexend peta";
+    padding-left:15px;
+    padding-top:10px;
+    font-size:13px;
+}
+
+body div.container .service .input-box{
+    border-radius:15px;
+    border:solid 1px lightskyblue;
+    height:30px;
+    margin-left:10px;
+    outline:none;
+}
+
+body div.container .service option{
+    background:black;
+    color:white;
+    border-radius:10px;
+}
+
+body div.container .people{
+    font-family:"lexend peta";
+    font-size:13px;
+    padding-left:15px;
+}
+
+body div.container .people .input-box{
+    border-radius:15px;
+    height:30px;
+    border:solid 1px lightskyblue;
+    margin-left:10px;
+    outline:none;
+}
+
+body div.container button{
+    margin-top:50px;
+    background:black;
+    color:white;
+    font-family:"lexend peta";
+    width:200px;
+    height:60px;
+    border:solid 1px black;
+    text-align:center;
+    position: relative;
+    left:90px;
+    transition:1s;
+    -moz-transition: 1s;
+    outline:none;
+}
+
+body div.container button:hover{
+    transform:scale(1.05);
+    color:blue;
+    cursor: pointer;
+}
+
+body div.container #totaltip{
+    text-align:center;
+    font-family:"lexend peta";
+    font-size:20px;
+    margin-top:30px;
+}
+
+body div.container #totaltip:before{
+    content:"TOTAL TIP";
+    display: block;
+}
+
+body div.container #each{
+    font-size:13px;
+}

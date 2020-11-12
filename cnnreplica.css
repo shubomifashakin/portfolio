@@ -1,0 +1,629 @@
+html{
+    width:100%;
+    height:auto;
+    overflow-x:hidden;
+}
+
+body nav#myTopnav{
+    background:black;
+    width:100%;
+    color:white;
+    height:41px;
+    position: fixed;
+    overflow: hidden;
+    transition:0.5s;
+}
+
+body div.nav-left{
+    float:left;
+}
+
+body nav .nav-brand{
+    display:inline;
+    padding-left:50px;
+    padding-right:10px;
+    position: absolute;
+}
+
+body nav#myTopnav .nav-link{
+    color:darkgray;
+    font-family:"open sans",sans-serif;
+    font-weight:light;
+    text-decoration:none;
+    position: relative;
+    left:110px;
+    top:10px;
+    font-size:14px;
+    padding-right:15px;
+    transition:0.4s;
+    
+}
+body nav#myTopnav .nav-link:hover{
+    color:white;
+}
+
+
+body nav#myTopnav div.nav-right{
+    float:right;
+    position: relative;
+    top:10px;
+    margin-right: 20px;
+}
+
+body nav#myTopnav div.nav-right a.right-link{
+    color:darkgray;
+    font-size:14px;
+    font-family:"open sans",sans-serif;
+    text-decoration: none;
+    font-weight:bold;
+    letter-spacing: -0.5px;
+   transition:0.5s;
+   margin-right:15px;
+   transition:.3s;
+}
+
+body nav#myTopnav div.nav-right ul.dropdown-list{
+    display:none;
+    position: fixed;
+    color:white;
+    background:black;
+    top:25px;
+    right:117px;
+    text-align:center;
+    list-style:none;
+    margin:0;
+    padding:0;
+    height:100px;
+    width:100px;
+}
+
+
+body nav#myTopnav div.nav-right ul.dropdown-list a{
+    color:darkgray;
+    font-size:14px;
+    font-family:"open sans",sans-serif;
+    text-decoration:none;
+}
+
+body nav#myTopnav div.nav-right a.right-link:hover{
+    color:white;
+}
+
+body nav#myTopnav div.nav-right a.right-link:hover i.icon-down{
+    display:none;
+}
+
+body nav#myTopNav div.nav-right a.right-link i.icon-up{
+    display:none;
+    transition:2s;
+}
+
+body nav#myTopnav div.nav-right a.right-link:hover i.icon-up{
+    display:inline;
+}
+
+body nav#myTopnav div.collapsed-navbar{
+    display:none;
+}
+
+/* responsive css */
+@media all and (max-width:1080px){
+    body nav#myTopnav{
+        height:43px;
+    }
+
+    body nav#myTopnav a.collapse{display:none;}
+
+    body nav#myTopnav.navbar.responsive{position:fixed;height:100vh; width:100%;transition:1s; background:black;}
+     body nav#myTopnav.navbar.responsive div.collapsed-navbar{
+         display: block;
+         margin-top:60px;
+         padding:20px;
+     }
+
+        body nav#myTopnav.navbar.responsive div.collapsed-navbar input.search-input{
+            position: relative;
+            top:0;
+            width:100%;
+            height:35px;
+            font-family:"open sans",sans-serif;
+            
+        }
+
+      body nav#myTopnav.navbar.responsive div.collapsed-navbar .collapsed-link{
+         color:darkgray;
+         display: block;
+         text-align:center;
+         margin-top:20px;
+         font-family:"open sans",sans-serif;
+         font-size:20px;
+         text-decoration:none;
+         transition:0.5s;
+     }
+
+     body nav#myTopnav.navbar.responsive div.collapsed-navbar .collapsed-link:hover{
+        color:white;
+    }
+
+    body div.container div.top{
+        display:none;
+    }
+
+}
+/* responsive ending */
+
+/*normal styles*/
+body div.container,.clear-fix {
+    padding:60px 110px 0 110px;
+    content:" ";
+    display: table;
+    clear:both;
+}
+
+
+body div.container a.top-text{
+    font-family:"open sans",sans-serif;
+    font-size:13px;
+    color:black;
+    text-decoration:none;
+    font-weight: bold;
+    transition:0.3s;
+    padding-right:10px;
+    border-right:solid 2px gainsboro;
+    margin-right:5px;
+}
+
+body div.container div.top a span.red-text{
+    color:#c80505;
+    font-family:helvetica;
+    font-weight:bold;
+    font-size:14px;
+}
+
+body div.container div.top a.top-text:hover{
+    color:#c80505;
+}
+
+body div.container div.row-1{
+    width:460px;
+    float:left;
+    transition:.2s;
+    height:100vh;
+}
+
+body div.container div.row-1 a.header-text, a.header-text h2{
+    font-size:2.2rem;
+    color:#141212;
+    text-decoration:none;
+    font-family:"open sans",sans-serif;
+    text-align:right;
+    margin-bottom:10px;
+    transition:0.3s;
+}
+
+body div.container div.row-1 a.header-text h2:hover{
+    color:#c80505;
+}
+
+body div.container div.row-1 a.header-sub-text{
+    font-family:"open sans",sans-serif;
+    font-size:17px;
+    font-weight:bold;
+    color:#141212;
+    text-decoration: none;
+    transition:0.3s;
+}
+
+body div.container div.row-1 a.header-sub-text:hover{
+    color:#c80505;
+}
+
+body div.container div.row-1 p a.link-text{
+    font-family:"open sans",sans-serif;
+    text-decoration: none;
+    color:#141212;
+    font-size:14.2px;
+    padding-top:3px;
+    margin-top:0;
+    border-top:solid 1px gainsboro;
+    transition:0.3s;
+    display:inline-block;
+}
+
+body div.container div.row-1 a.link-text:hover{
+    color:#c80505;
+}
+
+/*row 2*/
+body div.container div.row-2{
+    padding-top:42px;
+    margin-left:24px;
+    float:left;
+    width:300px;
+    height:100vh;
+}
+
+body div.container div.row-2 div.img-container{
+    height:200px;
+    width:300px;
+    background:grey;
+}
+
+body div.container div.row-2 h3{
+    font-family:"open sans",sans-serif;
+    padding:5px;
+    box-sizing: border-box;
+    background:darkgrey;
+    margin-bottom:0;
+}
+
+
+body div.container div.row-2 a.header-sub-text{
+    font-family:"open sans",sans-serif;
+    font-size:20px;
+    font-weight:bold;
+    color:#141212;
+    text-decoration: none;
+    transition:0.3s;
+}
+
+body div.container div.row-2 a.header-sub-text:hover{
+    color:#c80505;
+}
+
+body div.container div.row-2 li.link-text a{
+    color:black;
+    text-decoration:none;
+    font-family:"open sans",sans-serif;
+    font-size:14px;
+    border-bottom:solid 1px gainsboro;
+    list-style:none;
+    transition:0.3s;
+}
+
+body div.container div.row-2 li.link-text a:hover{
+    color:#c80505;
+}
+
+body div.container div.row-2 li{
+    list-style:none;
+}
+body div.container div.row-2 li:before{
+    content:"• ";
+    font-size:13pt;
+}
+
+/* row-2 ending */
+
+/* row-3 */
+body div.container div.row-3{
+    padding-top:42px;
+    margin-left:24px;
+    float:left;
+    width:300px;
+    height:100vh;
+    padding-bottom:20px;
+}
+
+
+body div.container div.row-3 a.header-sub-text{
+    font-family:"open sans",sans-serif;
+    font-size:20px;
+    font-weight:bold;
+    color:#141212;
+    text-decoration: none;
+    transition:0.3s;
+}
+
+body div.container div.row-3 a.header-sub-text:hover{
+    color:#c80505;
+}
+
+
+body div.container div.row-3 p a.link-text{
+    font-family:"open sans",sans-serif;
+    text-decoration: none;
+    color:#141212;
+    font-size:14.2px;
+    line-height:22px;
+    padding-top:3px;
+    border-top:solid 1px gainsboro;
+    box-decoration-break: unset;
+    transition:0.3s;
+    display: inline-block;
+}
+
+body div.container div.row-3 a.link-text:hover{
+    color:#c80505;}
+
+
+
+    /* section pre-footer */
+
+body section.pre-footer{
+    height:100vh;
+    width:100%;
+    background:#060505;
+    margin-top:50px;
+     display:table;
+    content:" ";
+    clear:both;
+}
+
+body section.pre-footer div.section-container{
+    padding:60px 45px 0 45px;
+    
+}
+body section.pre-footer div.section-container input{
+    width:100%;
+    height:35px;
+    padding:5px;
+    font-family:"open sans",sans-serif;
+    font-size:14px;
+    margin-bottom:15px;
+    outline:none;
+    
+}
+
+body section.pre-footer div.section-container div.links{
+    display:table;
+    content:" ";
+    clear:both;
+}
+
+body section.pre-footer div.section-container div.section-float{
+    width:125px;
+    height:200px;
+    float:left;
+    margin-right:50px;
+}
+
+body section.pre-footer div.section-container div.section-float-2{
+    width:125px;
+    height:200px;
+    float:left;
+    margin-right:50px;
+}
+
+
+body section.pre-footer div.section-container a.section-head{
+    color:white;
+    text-decoration: none;
+    font-family:"open sans",sans-serif;
+    font-size:16px;
+    text-transform: capitalize;
+    font-weight:bold;
+}
+
+body section.pre-footer div.section-container  a.section-head:hover{
+    text-decoration:underline;
+}
+
+body section.pre-footer div.section-container  ul.section-menu{
+    margin-top:0;
+    list-style:none;
+    padding:0;
+    color:white;
+    font-family:"open sans",sans-serif;
+    font-size:14px;
+}
+
+body section.pre-footer div.section-container  ul li{
+    margin-top:8px;
+}
+
+body section.pre-footer div.section-container ul li a{
+    color:white;
+    text-decoration:none;
+}
+body section.pre-footer div.section-container  ul li a.section-links:hover{
+    text-decoration:underline;
+}
+
+body section.collapsed-pre-footer{
+    display:none;
+    background:#060505;
+    height:100vh;
+    width:100%;
+    text-align:center;
+    margin:0 auto;
+    padding:35px 0 0 0;
+    color:white;
+    font-family:"open sans",sans-serif;
+    list-style:none;
+}
+
+body section.collapsed-pre-footer input{
+    width: 90%;
+    height:40px;
+  
+}
+
+body section.collapsed-pre-footer ul{
+    padding:0;
+    margin:20px 0 0 0 ;
+    list-style: none;
+}
+
+body section.collapsed-pre-footer li a{
+    color:darkgray;
+    font-size:20px;
+    text-decoration:none;
+    list-style:none;
+    text-align:center;;
+    transition:0.3s;
+    margin-top:5px;
+
+}
+
+body section.collapsed-pre-footer li a:hover{
+    color:white;
+}
+
+body footer{
+    background:#060505;
+    height:35vh;
+    width:100%;
+    display:table;
+    content:" ";
+    clear:both;
+}
+
+body footer div.left-footers{
+    float:left;
+    padding-left:50px;
+}
+
+body footer div.right-footers{
+    float:right;
+    padding-right:50px;
+    color:white;
+    font-size:18px;
+}
+
+body footer div.right-footers p.right-footer-text{
+    padding-right:10px;
+    border-right:solid 1px gainsboro;
+    color:white;
+    font-family:"open sans",sans-serif;
+    letter-spacing:1px;
+    display: inline;
+    font-size:12px;
+    font-weight:bold;
+}
+
+body footer  div.footer-links{
+    color:white;
+    padding:0 45px 20px 45px;
+    text-align:center;
+    clear:both;
+    font-size:13px;
+    font-family:"open sans",sans-serif;
+}
+
+body footer div.footer-links a{
+    color:white;
+    text-decoration:none;
+    padding-right:5px;
+}
+
+body footer div.footer-links a:hover{
+    text-decoration:underline;
+}
+
+body footer div.footer-others{
+    padding:0 50px 10px 50px;
+    font-size:13px;
+    color:white;
+    font-family:"open sans",sans-serif;
+    cursor:default;
+}
+
+
+
+@media all and (max-width:1080px){
+
+    body div.container{
+        padding:30px 10px 0 10px;
+        
+    }
+    body div.container div.row-1{
+        float:none;
+        width:100%;
+        display:block;
+        height:100vh;
+        padding-top:60px;
+        padding-bottom:30px;
+    }
+
+    body div.container div.row-1 img{
+        width:100%;
+        height:auto;
+    }
+    body div.container div.row-1 a.header-text h2{
+        width:auto;
+        font-size:100%;
+        text-align:center;
+    }
+
+    body div.container div.row-1 a.link-text{
+        width:auto;
+        margin-top:-8px;
+    }
+    body div.container div.row-2{
+        float:none;
+        width:100%;
+        display:block;
+        height:100vh;
+        margin:0;
+        padding-bottom:30px;
+    }
+    body div.container div.row-2 img{
+        width:100%;
+        height:auto;
+    }
+    body div.container div.row-3{
+        float:none;
+        width:100%;
+        display:block;
+        height:100vh;
+        margin:0;
+    }
+    body div.container div.row-3 img{
+        width:100%;
+        height:auto;
+    }
+}
+
+@media all and (max-width:1080px) and (orientation:landscape){
+    body div.container{
+        padding:30px 10px 0 10px;
+    }
+
+    body div.container div.row-1{
+        margin-bottom:60px;
+        height:100vh;
+    }
+
+    body div.container div.landscape{
+    display:none;
+    }
+    
+
+    body div.container div.row-2{
+        width:48%;
+        float:left;
+        margin-top:70px;
+        margin-right:2px;
+    }
+
+    body div.container div.row-3{
+        float:right;
+        width:48%;
+        margin-top:70px;
+        margin-left:2px;
+        margin-bottom: 500px;
+    }
+
+    body section.pre-footer {
+        display:none;
+    }
+
+    body section.collapsed-pre-footer{
+        display:block;
+        height:100vh;
+    }
+
+}
+
+@media all and (max-width:1080px){
+    body section.pre-footer {
+        display:none;
+    }
+
+    body section.collapsed-pre-footer{
+        display:block;
+        background:#060505;
+        height: 100vh;;
+    }
+}

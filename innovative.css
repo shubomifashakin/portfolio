@@ -1,0 +1,459 @@
+body{
+	box-sizing: border-box;
+	margin:0;
+	background:linear-gradient(to top right,#000,black);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	overflow-x:hidden;
+}
+
+
+nav{
+	height:50px;
+	width:100%;
+	position: fixed;
+	top:0;
+	background:black;
+	z-index: 1;
+	padding:10px 50px 0 50px;
+	box-sizing: border-box;
+	transition: 0.5s;
+}
+
+nav a.brand-name{
+	float:left;
+	color:white;
+	text-decoration:none;
+	font-family:"lexend peta",sans serif;
+	letter-spacing:-2px;
+	transition: 0.4s;
+}
+
+nav a.brand-name:hover{
+	color:#e94560;
+}
+nav div.nav-right{
+	float:right;
+}
+
+a.nav-link{
+	color:white;
+	text-decoration: none;
+	font-family:"lexend peta",sans serif;
+	font-size:14px;
+	letter-spacing:-2px;
+	padding-right:9px;
+	transition:0.5s;
+}
+
+a.nav-link:hover{
+	color:#e94560;
+}
+
+nav a.icon{
+	color:white;
+	font-size:25px;
+	display:none;
+	transition:0.5s;
+}
+
+nav a.icon:hover{
+	color:#e94560;
+}
+
+nav div.collapsed-navbar{
+	position:relative;
+	left:10000px;
+	display:none;
+}
+
+
+@media all and (max-width:1080px){
+
+	nav.navbar a.nav-link{
+		display:none;
+	}
+
+	nav.navbar a#open{
+		display:block;
+		font-size:22px;
+		float:right;
+		transition:0.5s;
+	}
+
+	nav.navbar.responsive a#open{
+		display:none;
+		transition:0.5s;
+	}
+	nav.navbar.responsive{
+		background:rgba(0,0,0,0.7);
+		height:100vh;
+		position: fixed;
+		top:0;
+		z-index:1;
+	}
+	 .navbar.responsive a#close{
+        display:block;
+       float:right;
+    }
+    
+    .navbar.responsive div.nav-right{
+        display:block;
+        width:100%;
+        text-align: left;
+ 		font-size:22px;
+ 		float:none;
+ 		color:right;
+    }
+
+    .navbar.responsive a.nav-link{
+        display:block;
+        clear:both;
+        font-size:19px;
+        padding-top:25px;
+    }
+
+
+}
+
+div.container{
+	padding:10px 50px 0 50px;
+}
+div.container div.cover{
+	margin:25vh auto;
+	width:500px;
+	height:100vh;
+	transition:0.5s;
+	padding:0 50px;
+}
+
+div.container div.cover h2.header{
+	font-size:5rem;
+	background-clip:text;
+	background-size:100%;
+	-webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+	font-family:"kufam",sans-serif;
+	margin-bottom:0;
+	text-align:center;
+	transition:0.5s;
+	background-image: -moz-linear-gradient(to top left,#708db5,#d789d7,cyan,#9d65c9,#e94560,#e94560,#66bfbf,purple,#66bfbf,#66bfbf,purple); /* FF 3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(100%, #ffffff)); /* Safari 4+, Chrome 2+ */
+  background-image: -webkit-linear-gradient(to top left,#708db5,#d789d7,cyan,#9d65c9,#e94560,#e94560,#66bfbf,purple,#66bfbf,#66bfbf,purple); /* Safari 5.1+, Chrome 10+ */
+  background-image-image: -o-linear-gradient(to top left,#708db5,#d789d7,cyan,#9d65c9,#e94560,#e94560,#66bfbf,purple,#66bfbf,#66bfbf,purple); /* Opera 11.10 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ffffff'); /* IE6 & IE7 */
+  -ms-filter-image: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ffffff')"; /* IE8+ */
+  background-image: linear-gradient(to top left,#708db5,#d789d7,cyan,#9d65c9,#e94560,#e94560,#66bfbf,purple,#66bfbf,#66bfbf,purple); 
+}
+
+div.container div.cover p.lead-text{
+	font-family:"kufam",sans-serif;
+	color:#cbaf87;
+	margin-top:2px;
+	margin-bottom:2px;
+	font-size:2rem;
+	text-align:center;
+
+}
+
+div.container div.cover p.cover-text{
+	color:#f1f1e8;
+	text-align:center;
+	font-family:"kufam",sans-serif;
+	margin-top:2px;
+	font-size:13px;
+	margin-bottom:30px;
+}
+
+div.container div.btn-center{
+	text-align: center;
+}
+
+div.container a.cover-btn{
+	background:#e94560;
+	width:150px;
+	border:solid 2px #e94560;
+	border-radius:5px;
+	color:white;
+	font-family:"kufam",sans-serif;
+	font-size:18px;
+	transition:0.5s;
+	text-decoration:none;
+	padding:11px;
+}
+
+div.container .cover-btn:hover{
+	box-shadow:0 0 5px #e94560;
+	width:155px;
+	color:black;
+}
+
+@media all and (max-width:1080px){
+	div.container div.cover{
+		width:auto;
+		padding:0;
+	}
+
+	div.container div.cover h2.header{
+		font-size:3rem;
+	}
+
+	div.container div.cover p.lead-text{
+		font-size:25px;
+	}
+}
+
+
+
+section.projects h4{
+	color:white;
+	font-size:14px;
+	font-family:"kufam",sans serif;
+	font-weight:400;
+}
+
+section.fixed-social-bar{
+	position: fixed;
+	right:0;
+	color:white;
+	top:25vh;
+	margin-right:20px;
+	height:auto;
+	border-radius:5px;
+	padding:5px 0;
+	box-sizing: border-box;
+}
+
+section.fixed-social-bar div.section-line{
+	height:70px;
+	background:#e94560;
+	width:3px;
+	position:relative;
+	left:10px;
+	margin-bottom: 4px;
+}
+
+section.fixed-social-bar a{
+	display:block;
+	font-size:25px;
+	color:white;
+	transition:0.5s;
+	padding:3px;
+	box-sizing:border-box;
+}
+
+section.fixed-social-bar a:hover{
+	color:#e94560;
+}
+
+@media all and (max-width:1080px){
+	section.fixed-social-bar a{
+	font-size:20px;
+	color:white;
+}
+}
+
+@media all and (max-width:1080px) and (orientation:landscape){
+
+	section.fixed-social-bar{
+		position: fixed;
+		top:20vh;
+	}
+	section.fixed-social-bar a{
+	font-size:23px;
+	color:white;
+}
+}
+
+section.projects{
+	width:100%;
+	height:100vh;
+	display:table;
+	content:"";
+	clear:both;
+}
+
+section.projects div.image1-container{
+	width:300px;
+	height:250px;
+	overflow:hidden;
+	transition:1s;
+	float:left;
+	margin-right:15px;
+}
+
+section.projects div.image2-container{
+	width:300px;
+	height:320px;
+	float:left;
+	margin-right:15px;
+	overflow:hidden;
+}
+
+section.projects div.image3-container{
+	width:590px;
+	height:300px;
+	float:left;
+	overflow:hidden;
+}
+
+section.projects div.image4-container{
+	width:300px;
+	height:320px;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	top:-50px;
+	margin-right:15px;
+	clear:left;
+}
+
+section.projects div.image5-container{
+	width:300px;
+	height:250px;
+	float:left;
+	overflow:hidden;
+	margin-top:20px;
+	margin-right:20px;
+}
+
+section.projects div.image6-container{
+	width:250px;
+	height:274px;
+	float:left;
+	overflow:hidden;
+	margin-right:20px;
+	position:relative;
+	top:-5px;
+}
+
+section.projects div.image7-container{
+	width:315px;
+	height:274px;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	top:-5px;
+}
+
+section.projects div.image8-container{
+	width:300px;
+	height:320px;
+	float:left;
+	overflow:hidden;
+	position:relative;
+	top:-28px;
+	margin-right:15px;
+	clear:left;
+}
+
+section.projects div.image9-container{
+	width:440px;
+	height:330px;
+	float:left;
+	overflow:hidden;
+	margin-right:20px;
+	position:relative;
+	top:-30px;
+}
+
+section.projects div.image10-container{
+	width:435px;
+	height:330px;
+	float:left;
+	overflow:hidden;
+	margin-right:20px;
+	position:relative;
+	top:-30px;
+}
+section.projects div.hover img{
+	transform:scale(1);;
+	-webkit-transform:scale(1);
+	filter:blur(0) grayscale(0);
+	-webkit-filter:blur(0) grayscale(0);
+	transition:0.5s;
+}
+
+section.projects div.hover:hover img{
+	transform:scale(1.1);
+	-webkit-transform: scale(1.1);
+	filter: blur(1px) grayscale(1.1);
+	-webkit-filter:blur(1px) grayscale(1.1);
+	transition:0.5s ease-out;
+}
+
+@media all and (max-width:1080px){
+
+	body div.container section.projects div.hover{
+		display:none;
+	}	
+
+	body div.container section.projects div.collapsed{
+		display:block;
+		width:auto;
+		height:auto;
+		position:relative;
+		margin-bottom:10px;
+		top:0;
+		float:none;
+	}
+}
+
+@media all and (min-width:1081px) and (max-width:1350px){
+
+	body div.container section.projects div.hover{
+		position: relative;
+		top:0;
+		margin:0 0 10px 10px;
+		height:400px;
+	}
+
+	body div.container section.projects div.image1-container{
+		width:45%;
+		
+	}
+	body div.container section.projects div.image2-container{
+		width:45%;
+	}
+
+	body div.container section.projects div.image3-container{
+		width:91%;
+		clear:both;
+		text-align:center;
+	}
+
+	body div.container section.projects div.image4-container{
+		width:45%;
+	}
+	body div.container section.projects div.image5-container{
+		width:45%;
+	}
+
+	body div.container section.projects div.image6-container{
+		position:relative;
+		left:35%;
+	}
+
+
+	body div.container section.projects div.close{
+		display:none;
+	}
+}
+
+@keyframes move{
+	from{filter:inherit;}
+	to{filter:sepia(1.1);}
+}
+
+footer{
+	color:white;
+	text-align:center;
+	font-family:"lexend peta",sans serif;
+	cursor:default;
+	font-size:13px;
+	margin-bottom:4px;
+}

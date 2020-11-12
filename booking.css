@@ -1,0 +1,515 @@
+body{
+    padding:0;
+    margin:0;
+   background:#e8e8e8;
+    font-family:"kufam";
+}
+
+body nav.navbar{
+    width:100%;
+    height:50px;
+    position: fixed;
+    top:0;
+    z-index:1;
+    padding:15px;
+    box-sizing: border-box;
+    background:rgba(0,0,0,0.7);
+}
+
+body nav.navbar a.brand-name{
+    float:left;
+    color:white;
+    font-family:"kufam",sans-serif;
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:1px;
+    padding-left:40px;
+    box-sizing: border-box;
+    transition:0.5s;
+}
+
+body nav.navbar a.brand-name:hover{
+    color:gray;
+}
+
+nav.navbar a.nav-icon{
+    float:right;
+    color:white;
+    font-size:20px;
+    display:none;
+    transition:0.5s;
+}
+
+nav.navbar a.nav-icon:hover{
+    color:grey;
+}
+
+body div.nav-right{
+    float:right;
+}
+
+body nav.navbar a.nav-link{
+    color:white;
+    margin-right:50px;
+    box-sizing: border-box;
+    font-size:16px;
+    font-family:"kufam",sans-serif;
+    text-decoration:none;
+    transition:0.5s;
+}
+
+body nav.navbar a.book-btn{
+    background:#ffd36b;
+    color:black;
+    width:300px;
+    padding:7px;
+    height:300px;
+    margin-right:55px;
+    outline:none;
+}
+
+body nav.navbar a.book-btn:hover{
+    color:white;
+}
+
+nav.navbar a.nav-link:hover{
+    color:gray;
+}
+
+@media all and (max-width:1080px){
+    body{
+        overflow-x:hidden;
+    }
+    
+    body nav.navbar{
+        height:55px;
+        transition:0.5s;
+    }
+    nav.navbar div.nav-right{
+        display:none;
+        float:none;
+    }
+    
+    nav.navbar a#open{
+        display:inline;
+    }
+    
+   body nav#myTopnav.navbar.responsive{
+    height:100vh;
+    background:rgba(0,0,0,0.7);
+    float:none;
+    width:100%;
+    }
+    
+    body nav#myTopnav.navbar.responsive div.nav-right{
+        display:block;
+        text-align:center;
+    }
+    
+    body nav#myTopnav.navbar.responsive div.nav-right a.nav-link{
+        display:block;
+        text-align:center;
+        padding:0;
+        margin-right:0;
+        float:none;
+        width:100%;
+        font-size:22px;
+        margin-top:20px;
+    }
+    
+    body nav#myTopnav.navbar a.book-btn{
+        color:white;
+        background:none;
+        border:none;
+    }
+
+    
+}
+
+div.container div.cover{
+    width:100%;
+    height:50vh;
+    overflow:hidden;
+    position: relative;
+}
+div.container div.cover img{
+    width:100%;
+    height:auto;
+    position: absolute;
+    top:0;
+}
+
+div.cover h1{
+    color:white;
+    position: relative;
+    font-family:"kufam",sans-serif;
+    font-size:3rem;
+    top:30%;
+    text-align:center;
+}
+
+section div.icons div.line{
+    width:220px;
+    height:2px;
+    background:gainsboro;
+    display:inline-block;
+    position:relative;
+    top:-8px;
+    margin:0;
+}
+
+
+
+section a.icon i{
+     color:black;
+    background:gainsboro;
+    border:solid 3px gainsboro;
+    transition:0.5s;
+    font-size:30px; 
+    padding:10px 12px;
+    border-radius:50%;
+}
+section a.icon i:hover{
+    color:#ffd36b;
+    background:black;
+    border:solid 3px black;
+}
+
+body section.rms{
+   height:100vh;
+   display:none;
+    padding:0 50px;
+}
+
+body section.rms.display{
+    display:block;
+     content:"";
+    clear:both;
+}
+
+body div.room-select{
+    float:left;
+    width:30%;
+    height:480px;
+    background:white;
+    box-shadow:0 0 7px grey;
+}
+
+body div.room-select .form-input{
+    display:block;
+    width:330px;
+    margin:20px 20px 35px 20px;
+    height:35px;
+    padding:5px;
+    font-family:"kufam",sans-serif;
+    color:grey;
+}
+
+body div.room-select .form-input:focus{
+    border:solid 1px #ffd36b;
+    outline:none;
+    color:black;
+}
+
+div.room-select button.room-btn{
+    width:300px;
+    background:#ffd36b;
+    border:solid 1px #ffd36b;
+    height:40px;
+    font-family:"kufam",sans-serif;
+    font-weight:bold;
+    font-size:18px;
+    color:black;
+    transition:0.5s;
+    cursor:pointer;
+}
+
+body div.room-select button.room-btn:hover{
+    color:white;
+    box-shadow:0 0 10px #ffd36b;
+}
+
+body div.room-select-2{
+    float:right;
+    width:65%;
+}
+
+div.room-select-2 h2{
+    margin:0 0 25px 0;
+}
+
+div.room-select-2 div.booking-container{
+    height:550px;
+    background:white;
+}
+
+div.room-select-2 h2.room-info-header{
+    margin-top:40px;
+    margin-left:20px;
+}
+
+div.room-select-2 div.room-info-text{
+    margin-left:20px;
+    width:300px;
+}
+
+div.room-select-2 button.select-room-btn{
+     background:#ffd36b;
+    color:black;
+    width:120px;
+    height:40px;
+    font-family:"kufam",sans-serif;
+    border:none;
+    margin-left:20px;
+    margin-top:10px;
+    font-weight:bold;
+    transition:0.5s;
+    cursor: pointer;
+    outline:none;
+}
+
+div.room-select-2 button.select-room-btn:hover{
+    color:white;
+    box-shadow:0 0 5px #ffd36b;
+}
+div.room-select-2 div.room-1,.room-3{
+    float:left;
+    width:390px;
+    margin-top:10px;
+}
+
+div.room-select-2 div.room-3,div.room-4{
+    margin-top:40px;
+}
+
+div.room-select-2 div.room-2,.room-4{
+    float:right;
+    width:390px;
+    margin-top:10px;
+}
+
+div.room-select-2 .image-container{
+    width:390px;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+}
+
+div.room-select-2 .image-container:hover img{
+    -webkit-transform:scale(1.2);
+    transform:scale(1.2);
+    transition:0.5s;
+    filter:blur(1.2px);
+     -webkit-filter:1.2px;
+}
+
+.image-container div.room-price{
+    position: absolute;
+    bottom:0;
+    background:#00334e;
+    width:100%;
+    height:50px;
+    padding:15px 13px;
+    box-sizing: border-box;
+    color:white;
+    box-sizing:border-box;
+}
+
+@media all and (max-width:1080px){
+    
+    body div.room-select{
+        width:auto;
+        margin:0 auto;
+    }
+    
+    body div.room-select .form-input{
+        width:200px;
+    }
+    
+    body div.room-select-2{
+        display:none;
+    }
+}
+
+/* info section */
+div.container section.info-section{
+   height:100vh;
+    width:100%;
+    display:none;
+}
+
+div.container section.info-section.info-display{
+    display:block;
+    content:"";
+    clear:both;
+}
+
+div.container section.info-section div.info-left{
+    width:30%;
+    height:650px;
+    float:left;
+    background:white;
+    box-shadow:0 0 7px grey;
+    margin-left:50px;
+}
+
+section.info-section div.info-left div.image-container-2{
+height:300px;
+width:350px;
+margin-left:25px;
+overflow:hidden;
+}
+
+ div.info-left div.image-container-2:hover img{
+    transform:scale(1.2);
+    -webkit-transform: scale(1.2);
+    filter: blur(1.1px);
+    -webkit-filter:blur(1.1px);
+    transition:0.5s;
+    -webkit-filter:blur(1.2px);
+}
+
+div.info-text-container{
+    margin:15px 0 65px 25px;
+}
+div.info-text{
+    padding-top:10px;
+    font-size:15px;
+}
+
+div.info-left h2{
+    font-size:19px;
+}
+
+
+div.info-right{
+    float:right;
+    width:60%;
+    position:relative;
+    left:-5px;
+    background:white;
+    box-shadow:0 0 7px grey;
+    margin-right:50px;
+    padding-left:25px;
+    box-sizing:border-box;
+    height:700px;
+}
+
+div.info-right input.form-input{
+    width:330px;
+    margin:20px 20px 35px 0;
+    padding:5px;
+    height:35px;
+    font-family:"kufam",sans-serif;
+    color:grey;
+}
+div.info-right .form-input:focus{
+    border:solid 1px #ffd36b;
+    outline:none;
+    color:black;
+}
+
+button.info-btn{
+   background:#ffd36b;
+    border:solid 1px #ffd36b;
+    color:black;
+    width:160px;
+    padding:7px;
+    height:40px;
+    outline:none;
+    font-family:"kufam",sans-serif;
+    display:inline-block;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+div.buttons{
+    float:right;
+    position:relative;
+    left:-130px;
+}
+
+button.info-btn:hover{
+    box-shadow:0 0 5px #ffd36b;
+    color:white;
+}
+
+button.previous{
+    margin-right:15px;
+}
+
+
+div.container section.payment{
+display:none;
+}
+
+body div.container section.payment.payment-display{
+    display:block;
+    content:"";
+    clear:both;
+}
+
+div.container section#payment-info div.payment-left{
+    width:30%;
+    height:670px;
+    float:left;
+    background:white;
+    box-shadow:0 0 7px grey;
+    margin-left:50px;
+}
+
+section#payment-info div.payment-left div.image-container-2{
+height:300px;
+width:350px;
+margin-left:25px;
+overflow:hidden;
+}
+
+ div.payment-left div.image-container-2:hover img{
+    transform:scale(1.2);
+    -webkit-transform: scale(1.2);
+    filter: blur(1.1px);
+    -webkit-filter:blur(1.1px);
+    transition:0.5s;
+    -webkit-filter:blur(1.2px);
+}
+
+div.payment-text-container{
+    margin:15px 0 65px 25px;
+}
+div.payment-text{
+    padding-top:10px;
+    font-size:15px;
+}
+
+div.payment-left p{
+    font-size:19px;
+}
+
+div.payment-right{
+    float:right;
+    width:60%;
+    position:relative;
+    left:-5px;
+    background:white;
+    box-shadow:0 0 7px grey;
+    margin-right:50px;
+    padding-left:25px;
+    box-sizing:border-box;
+    height:500px;
+}
+
+div.payment-right input.form-input{
+    width:330px;
+    margin:20px 20px 35px 0;
+    padding:5px;
+    height:35px;
+    font-family:"kufam",sans-serif;
+    color:grey;
+}
+div.payment-right .form-input:focus{
+    border:solid 1px #ffd36b;
+    outline:none;
+    color:black;
+}
+

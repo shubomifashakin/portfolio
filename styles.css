@@ -1,0 +1,579 @@
+html{
+    width:100%;
+    overflow-x:hidden;
+    height:auto;
+}
+
+body{
+    overflow-x:hidden;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+}
+
+/* scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(210,0,0,0.7); 
+    border-radius:3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+/*scroll bar styles ending*/
+
+
+body div.container{
+    width:100%;
+    height:100%;
+    background:black;
+}
+
+
+/* navbar styles */
+body  div.navbar{
+    background:rgba(0,0,0,0.6);
+    overflow: hidden;
+    z-index:1;
+    height:70px;
+    position: fixed;
+    top:0;
+    display:block;
+    width:100%;
+    transition:1s;
+}
+
+body div.navbar a.nav-link{
+    float:right;
+    color:white;
+    line-height:70px;
+    padding-right:20px;
+    text-decoration:none;
+    color:white;
+    text-transform: uppercase;
+    font-family:'lexend peta';
+    font-size:13px;
+    transition:0.5s;
+}
+
+body div.navbar a.nav-brand{
+   position:absolute;
+   top:-15px;
+    padding-left:5px;
+}
+
+body div.navbar a.nav-link i.nav-icon{
+    display:none;
+}
+
+body div.navbar a.nav-link:hover{
+    color:red;
+    font-size:14px;
+    letter-spacing: 1px;
+}
+
+body div.navbar a.nav-link:hover i.nav-icon{
+    display:inline-block;
+}
+
+.navbar a#open {
+  display: block;
+  position: relative;
+    width:20px;
+    margin-right:5px;
+  right: 0;
+  top: 18px;
+    padding:5px;
+    font-size:20px;
+    color:white;
+    float:right;
+    display:none;
+}
+
+.navbar a#close {
+  display: none;
+  position: relative;
+    width:20px;
+    margin-right:5px;
+  right: 0;
+  top: 18px;
+    padding:5px;
+    font-size:20px;
+    color:white;
+    float:right;
+    display:none;
+}
+
+.navbar a.icon:hover{
+ color:white;
+}
+
+/* responsive css */ 
+@media screen and (max-width:1080px){
+    body div.navbar {
+        height:70px
+    }
+
+    body div.navbar a.nav-brand{
+        position: absolute;
+        top:-12px;
+    }
+    .navbar a:not(:first-child){display:none}
+    .navbar a#open{
+        display:block;
+        font-size:30px;
+        margin-right:25px;
+    }
+}
+
+@media screen and (max-width:1081px){
+    .navbar.responsive{position:fixed;height:100vh;transition:1s; background:rgba(0,0,0,0.9)}
+    .navbar.responsive a#open{
+        display:none;
+        }
+    
+    .navbar.responsive a#close{
+        display:block;
+        font-size:30px;
+        margin-right:25px;
+    }
+    
+    .navbar.responsive a.nav-link{
+        display:block;
+        width:100%;
+        text-align: right;
+        font-size:18px;
+      position:relative;
+    }
+
+    .navbar.responsive a.nav-link:hover{
+        font-size:16px;
+    }
+}
+
+/* responsive css ending */
+
+/* navbar styles ending */
+
+body section.cover{
+    padding-top:100px;
+    box-sizing: border-box;
+    background:url(../images/cover.jpg);
+    background-attachment: fixed;
+    background-repeat: none;
+    background-size: cover;
+    height:100vh;
+    color:white;
+    width:100%;
+    margin-bottom: 0;
+    cursor:default;
+    animation:fadeIN ease 5s;
+}
+
+
+@media (max-width:1081px;),print ( orientation:landscape;){
+    body section.cover{
+    background:url(../images/wallpaper6.jpg);
+    background-size:cover;
+    background-repeat:none;
+    background-attachment:fixed;
+    width: 100%;
+    height:100vh;
+    }
+}
+@keyframes fadeIN{
+    0%{opacity:0}
+    100%{opacity:1};
+}
+
+
+body section.cover div.black{
+    background:black;
+    height:100vh;
+    width:100%;
+    position:absolute;
+    top:0;
+    opacity:0.6;
+}
+
+body section.cover div.text{
+    position:relative;
+    padding-top:25vh;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body div.text p{
+    font-size:25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family:'lexend peta';
+}
+
+body div.text mark{
+    background:red;
+    font-weight: bold;
+}
+
+body div.text p.sub{
+    font-size:13px;
+    color:antiquewhite;
+    font-family:'lexend peta';
+}
+
+body div.container a.scroll{
+    color:white;
+    text-align: center;
+    text-decoration: none;
+    font-size:13px;
+    font-family: 'lexend peta';
+    transition: 0.5s;
+}
+
+body div.container a.social-link{
+    color:red;
+    font-family:monospace;
+    text-decoration: none;
+    font-size:20px;
+    transition:0.5s;
+}
+
+body div.container a.social-link:hover{
+    color:white;
+    letter-spacing:2px;
+    font-size:22px;
+    transition:0.5s;
+    cursor: pointer;
+}
+
+body div.container a.scroll:hover{
+  color:red;
+    font-size:15px;
+    letter-spacing: 2px;
+}
+
+body div.container section.cover div.text input#mynumber{
+    display:none;
+}
+
+
+/* second */
+body div.container section.second{
+    background:black;
+    width:100%;
+    height:100vh;
+    color:white;
+    -moz-color:white;
+    font-family:'lexend peta';
+    display:table;
+    content:"";
+    clear:both;
+}
+
+body div.container section.second h2{
+    font-family:'lexend peta';
+    text-align:center;
+    color:red;
+    -moz-color:red;
+    -webkit-color:red;
+}
+
+body div.container section.second div.bio{
+    float:left;
+    width:45%;
+    padding-left:20px;
+    text-align:left;
+    font-size:14px;
+    padding-top:25vh;
+    padding-bottom:25vh;
+    box-sizing: border-box;
+    line-height:25px;
+}
+
+@media screen and (max-width:1081px){
+    body div.container section.second div.bio{
+        font-size:13px;
+        padding-left:10px;
+    }
+}
+
+body div.container section div.bio mark{
+    background:red;
+    font-family:'lexend peta';
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+body div.container section div.bio li{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+body div.container section.second div.bio2{
+    float:right;
+    width:45%;
+    padding-left:20px;
+    text-align:center;
+     font-size:15px;
+    letter-spacing:1px;
+    padding-top:25vh;
+    box-sizing: border-box;
+}
+
+
+body div.container section.second div.bio2 li{
+    list-style:none;
+    margin:5px;
+    font-family:'lexend peta';
+}
+
+
+body div.container section.second div.bio2 .bar{
+    height:6px;
+    border:solid 1px white;
+    display:block;
+    margin-top:2px;
+    box-shadow:0 0 3px red;
+    border-radius:5px;
+}
+
+body div.container section.second div.bio2 .bar-red{
+    height:6px;
+    border:solid 1px red;
+    display:block;
+    margin-top:2px;
+    box-shadow:0 0 3px red;
+    border-radius:5px;
+}
+
+body div.container section.second div.bio2 .bar span{
+    height:6px;
+    float:left;
+    border-radius:5px;
+    position:relative;
+    top:0;
+    left:0;
+}
+
+body div.container section.second div.bio2 .bar-red span{
+    height:6px;
+    float:left;
+    border-radius:5px;
+    position:relative;
+    top:0;
+    left:0;
+}
+
+body div.container section.second div.bio2 .bar .html{
+    background:white;
+    -moz-background:white;
+    width:70%;
+    animation:html 1s forwards;
+}
+
+body div.container section.second div.bio2 .bar-red .css{
+    background:red;
+    width:60%;
+    animation:css 1.1s forwards;
+}
+body div.container section.second div.bio2 .bar .php{
+    background:white;
+    -moz-background:white;
+    width:20%;
+    animation:php 1.2s forwards;
+}
+body div.container section.second div.bio2 .bar-red .javascript{
+    background:red;
+    width:20%;
+    animation:javascript 1.3s forwards;
+}
+
+@keyframes html{
+    0%{width:0%}
+    100%{width:70%}
+}
+@keyframes css{
+    0%{width:0%}
+    100%{width:60%}
+}
+@keyframes php{
+    0%{width:0%}
+    100%{width:20%}
+}
+@keyframes javascript{
+    0%{width:0%}
+    100%{width:20%}
+}
+/* second ending*/
+
+
+/* third */
+body div.container section.third{
+    background:url(../images/wallpaper5.jpg);
+    background-attachment:fixed;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    height:100vh;
+    width:100%;
+    display:table;
+    content:" ";
+    clear:both;
+}
+
+body div.container section.third .header{
+    font-size:3rem;
+    font-family:"lexend peta";
+    color:white;
+    text-align:center;
+    margin-bottom:5px;
+    padding-top:25px;
+}
+
+body div.container section.third p.header-text{
+    font-size:16px;
+    font-family:"lexend peta";
+    text-align:center;
+    color:white;
+    margin-top:5px;
+}
+
+body div.container section.third .project-container{
+    width:300px;
+    height:300px;
+    float:left;
+    margin-top:20px;
+    margin-right:20px;
+    transition:0.3s;
+    text-align:center;
+    position: relative;
+}
+
+body div.container section.third .project-container h3, .project-container p{
+    cursor:default;
+}
+
+body div.container section.third .project-text{
+    font-size:13px;
+    font-family:"lexend peta";
+    color:white;
+    text-align:center;
+    margin-bottom:5px;
+    margin-left:20px;
+}
+
+body div.container section.third .project{
+    overflow:hidden;
+    margin-top:20px;
+    margin-left:20px;
+    width: 300px;
+	height: 200px;
+	background: #fff;
+    border-radius:10px;
+    text-align:center;
+}
+
+body div.container section.third .project img{
+    -webkit-transform: scale(1);
+	transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    filter: blur(0)
+}
+
+
+body div.container section.third .project:hover img{
+    -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+    -webkit-transition: .3s ease-in-out;
+    -webkit-filter: blur(1.3px);
+    -moz-filter: blur(1.3px);
+    filter: blur(1.3px);
+}
+
+body div.container section.third .project-container p.inner-text{
+    display: none;
+    color:white;
+    position: absolute;
+    top:100px;
+    text-align:center;
+    font-family:"lexend peta";
+    background:rgba(0,0,0,0.7);
+    width:300px;
+}
+
+body div.container section.third .project-container .project:hover p.inner-text{
+    display:block;
+    transition:3s;
+}
+
+    @media screen and (max-width:1081px){
+        body div.container section.third .header{
+            font-size:30px;
+        }
+
+        body div.container section.third p.header-text{
+            font-size:17px;
+        }
+
+        body div.container section.third .project-container{
+            display:block;
+            width:100%;
+            text-align:center;
+            margin-left:0;
+            float:none;
+        }
+
+        body div.container section.third .project-container .project{
+            text-align:center;
+           margin:0 auto;
+        }
+
+    }
+
+
+/* footer */
+
+body div.container footer{
+    color:white;
+    display:block;
+    text-align: center;
+    background:rgba(0,0,0,0.4);
+    padding:20px;
+    font-family:'lexend peta';
+    font-size:13px;
+    text-transform: uppercase;
+    width:100%;
+    letter-spacing:1px;
+    cursor: default;
+}
+
+body div.container footer .my-email{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+}
+
+@media all and (max-width:1081px){
+    body div.container footer{
+        font-size:10px;
+        letter-spacing:0;
+        color:red;
+    }
+}
