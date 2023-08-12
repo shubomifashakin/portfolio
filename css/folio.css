@@ -6,11 +6,18 @@
   --bg-color: #000;
   font-size: 16px;
   --text-color: #fff;
+  --hover-color: rgb(247, 30, 30);
   box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
 }
 
 body {
   overflow: hidden;
+  height: 100%;
 }
 
 #app {
@@ -25,7 +32,9 @@ body {
   display: flex;
   align-items: center;
   padding: 1rem 4rem;
+  justify-content: space-between;
   height: 10%;
+  background-color: var(--bg-color);
   color: var(--text-color);
 }
 #app .navbar .inner-nav,
@@ -43,6 +52,24 @@ body {
 #app footer .time {
   cursor: default;
   font-size: 0.85rem;
+  font-weight: 200;
+}
+#app .navbar .mobile-date,
+#app footer .mobile-date {
+  display: none;
+  font-size: 0.85rem;
+  cursor: default;
+  font-weight: 200;
+}
+#app .inner-nav-2 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+#app .inner-nav-2 .country {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  cursor: default;
   font-weight: 200;
 }
 #app .navbar {
@@ -83,19 +110,27 @@ body {
 #app main .inner-main .sections .section-1 {
   padding: 2rem 4rem;
 }
+#app main .inner-main .sections .section-1 .recent {
+  font-size: 0.85rem;
+  font-weight: 200;
+  cursor: default;
+  display: none;
+  color: var(--hover-color);
+}
 #app main .inner-main .sections .section-1 .name {
   font-size: 8rem;
   cursor: default;
+  font-weight: 700;
 }
 #app main .inner-main .sections .section-1 .hov-split {
   font-size: inherit;
   transition: linear 0.3s;
 }
 #app main .inner-main .sections .section-1 .hov-split:hover {
-  color: red;
+  color: var(--hover-color);
 }
 #app main .inner-main .sections .section-1 .role {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
   color: #cccccc;
   font-weight: 300;
@@ -122,13 +157,22 @@ body {
   font-size: 0.85rem;
   font-weight: 200;
   cursor: default;
+  color: var(--hover-color);
 }
 #app main .inner-main .sections .section-2 .inner-section .work {
   display: flex;
   align-items: center;
   padding: 1rem 4rem;
+  text-decoration: none;
 }
-#app main .inner-main .sections .section-2 .inner-section .work a {
+#app main .inner-main .sections .section-2 .inner-section .work:hover > p {
+  text-decoration: line-through;
+  color: var(--hover-color);
+}
+#app main .inner-main .sections .section-2 .inner-section .work:hover .work-details {
+  opacity: 1;
+}
+#app main .inner-main .sections .section-2 .inner-section .work p {
   width: -moz-fit-content;
   width: fit-content;
   font-size: 5rem;
@@ -138,13 +182,6 @@ body {
   flex-basis: 55%;
   transition: linear 0.3s;
 }
-#app main .inner-main .sections .section-2 .inner-section .work a:hover {
-  text-decoration: line-through;
-  color: red;
-}
-#app main .inner-main .sections .section-2 .inner-section .work a:hover ~ .work-details {
-  opacity: 1;
-}
 #app main .inner-main .sections .section-2 .inner-section .work .work-details {
   opacity: 0;
   font-size: 0.85rem;
@@ -152,24 +189,62 @@ body {
   flex-basis: 45%;
   font-weight: 200;
   transition: linear 0.3s;
+  cursor: default;
+  color: var(--text-color);
 }
 #app main .inner-main .sections .section-2 .inner-section .work .work-details .tech {
   font-size: inherit;
-  color: red;
+  color: var(--hover-color);
   font-weight: inherit;
   text-transform: uppercase;
 }
-#app main .inner-main .sections .section-2 .inner-section .work .work-details:hover {
-  display: block;
-}
 #app main .inner-main .sections .section-2 .inner-section .work-1,
 #app main .inner-main .sections .section-2 .inner-section .work-2 {
+  transition: linear 0.3s;
   border-bottom: solid 1px var(--text-color);
 }
-#app main .current-page {
+#app main .inner-main .sections .section-2 .inner-section .work-1:hover,
+#app main .inner-main .sections .section-2 .inner-section .work-2:hover {
+  border-bottom: solid 1px var(--hover-color);
+}
+#app main .inner-side {
   width: 10%;
   height: 100%;
   border-left: solid 1px var(--text-color);
+}
+#app main .inner-side .current-page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#app main .inner-side .current-page .current-page-inner {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: block;
+  scroll-snap-type: y mandatory;
+}
+#app main .inner-side .current-page .current-page-inner::-webkit-scrollbar {
+  display: none;
+}
+#app main .inner-side .current-page .current-page-inner .page-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  height: 100%;
+  width: 100%;
+  text-decoration: line-through;
+  writing-mode: vertical-rl;
+  font-size: 8rem;
+  scroll-snap-align: start;
+  font-weight: 700;
+  cursor: default;
+  color: var(--text-color);
+}
+#app main .inner-side .current-page .current-page-inner .page-name:hover {
+  color: var(--hover-color) !important;
 }
 #app footer {
   border-top: solid 1px var(--text-color);
@@ -211,7 +286,7 @@ body {
   margin-bottom: 0.5rem;
   transition: linear 0.3s;
   opacity: 0;
-  color: red;
+  color: var(--hover-color);
   cursor: default;
 }
 #app footer .inner-footer .navigation .dot-cont .dot {
@@ -224,10 +299,10 @@ body {
   transition: linear 0.3s;
 }
 #app footer .inner-footer .navigation .dot-cont .dot:hover {
-  background-color: red;
+  background-color: var(--hover-color);
 }
 #app footer .inner-footer .navigation .dot-cont div.active-page {
-  background-color: red;
+  background-color: var(--hover-color);
 }
 #app footer .inner-footer .navigation .dot-cont p.active-page {
   opacity: 1;
@@ -244,5 +319,171 @@ body {
   transition: linear 0.3s;
 }
 #app footer .footer-link:hover {
-  color: red;
+  color: var(--hover-color);
+}
+
+@media only screen and (max-width: 650px), (max-height: 550px) {
+  html {
+    height: 100% !important;
+  }
+  body {
+    overflow-y: auto;
+    height: 100% !important;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  #app {
+    height: auto;
+    display: block;
+  }
+  #app .navbar,
+  #app footer {
+    padding: 2rem 1rem;
+    height: auto;
+  }
+  #app .inner-nav {
+    width: 60% !important;
+  }
+  #app .date,
+  #app .time {
+    font-size: 0.85rem;
+  }
+  #app .date {
+    display: none !important;
+  }
+  #app .mobile-date {
+    display: block !important;
+  }
+  #app main {
+    height: auto;
+    width: 100%;
+  }
+  #app main .inner-main {
+    width: 100%;
+  }
+  #app main .inner-main .sections {
+    display: block;
+  }
+  #app main .inner-main .sections .section-1 {
+    padding: 3rem 1rem;
+  }
+  #app main .inner-main .sections .section-1 .recent {
+    display: block;
+  }
+  #app main .inner-main .sections .section-1 .name {
+    font-size: 3rem !important;
+  }
+  #app main .inner-main .sections .section-1 .bio {
+    width: 100%;
+  }
+  #app main .inner-main .sections .section-2 .recent {
+    margin-left: 1rem !important;
+  }
+  #app main .inner-main .sections .section-2 .work {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem !important;
+  }
+  #app main .inner-main .sections .section-2 .work p {
+    width: 100% !important;
+    font-size: 3rem !important;
+  }
+  #app main .inner-main .sections .section-2 .work .work-details {
+    margin-top: 0.5rem !important;
+    opacity: 1 !important;
+  }
+  #app main .inner-main .sections .section-3 {
+    display: none;
+  }
+  #app main .inner-side {
+    display: none;
+  }
+  #app footer {
+    height: auto !important;
+    background-color: var(--bg-color) !important;
+  }
+  #app footer .navigation {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 661px) and (max-width: 950px) and (min-height: 600px), (min-width: 900px) and (max-width: 1200px) and (min-height: 600px) and (max-height: 800px) {
+  body {
+    overflow-y: auto;
+    height: 100% !important;
+  }
+  #app {
+    height: 100% !important;
+    display: block;
+  }
+  #app .navbar,
+  #app footer {
+    padding: 2rem 1rem;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #app .inner-nav {
+    width: 50% !important;
+  }
+  #app .date,
+  #app .time {
+    font-size: 1rem;
+  }
+  #app .mobile-date {
+    display: none !important;
+  }
+  #app main {
+    height: auto;
+    width: 100%;
+  }
+  #app main .inner-main {
+    width: 100%;
+  }
+  #app main .inner-main .sections {
+    display: block;
+  }
+  #app main .inner-main .sections .section-1 {
+    padding: 4rem 1rem;
+  }
+  #app main .inner-main .sections .section-1 .recent {
+    font-size: 1rem !important;
+    display: block;
+  }
+  #app main .inner-main .sections .section-1 .name {
+    font-size: 4rem !important;
+  }
+  #app main .inner-main .sections .section-1 .bio {
+    font-size: 1rem !important;
+    width: 100%;
+  }
+  #app main .inner-main .sections .section-2 .recent {
+    font-size: 1rem !important;
+    margin-left: 1rem !important;
+  }
+  #app main .inner-main .sections .section-2 .work {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1rem !important;
+  }
+  #app main .inner-main .sections .section-2 .work p {
+    width: 100% !important;
+    font-size: 3rem !important;
+  }
+  #app main .inner-main .sections .section-2 .work .work-details {
+    margin-top: 0.5rem !important;
+    opacity: 1 !important;
+    font-size: 1.25rem !important;
+  }
+  #app main .inner-main .sections .section-2 .work-2 {
+    margin: 2rem 0 !important;
+  }
+  #app main .inner-main .sections .section-3 {
+    display: none;
+  }
+  #app main .inner-side {
+    display: none;
+  }
+  #app footer .navigation {
+    display: none !important;
+  }
 }/*# sourceMappingURL=folio.css.map */

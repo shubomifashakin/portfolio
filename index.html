@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./css/folio.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer type="module" src="/main.js"></script>
-    <title>Shubomi v1</title>
+    <title>SHUBOMI V1</title>
   </head>
   <body>
     <div id="app">
@@ -13,11 +13,16 @@
         <div class="inner-nav">
           <div class="date-container">
             <p class="date"></p>
+            <p class="mobile-date"></p>
           </div>
 
           <div class="time-container">
             <p class="time"></p>
           </div>
+        </div>
+
+        <div class="inner-nav-2">
+          <p class="country">LAGOS, NIGERIA</p>
         </div>
       </nav>
 
@@ -25,6 +30,7 @@
         <div class="inner-main">
           <div class="sections">
             <section class="section-1 about">
+              <h2 class="recent">ABOUT</h2>
               <div class="names">
                 <h2 class="last-name name">FASHAKIN.</h2>
                 <h2 class="first-name name">OLASHUBOMI.</h2>
@@ -40,32 +46,13 @@
 
             <section class="section-2 works">
               <div class="inner-section">
-                <h2 class="recent">RECENTS</h2>
-                <p class="work-1 work">
-                  <a
-                    href="https://545dictionary.netlify.app/"
-                    class="work-name"
-                    target="_blank"
-                    >DICTIONARY.</a
-                  >
-
-                  <span class="work-details">
-                    A dictionary website which uses the dictionary api to enable
-                    users search for the meaning of words, phonetic
-                    transcriptions(voiced), synonyms, antonyms and how to use
-                    the word in a sentence.<br />
-                    <span class="tech">Technologies -</span> Object Oriented
-                    Javascript
-                  </span>
-                </p>
-
-                <p class="work-2 work">
-                  <a
-                    href="https://545spotifystats.netlify.app/"
-                    class="work-name"
-                    target="_blank"
-                    >SPOTI-STATS.</a
-                  >
+                <h2 class="recent">RECENT WORKS</h2>
+                <a
+                  href="https://545spotifystats.netlify.app/"
+                  target="_blank"
+                  class="work-1 work"
+                >
+                  <p class="work-name">SPOTI-STATS.</p>
                   <span class="work-details">
                     A wesbite which uses the spotify api to enable spotify users
                     check their top 20 tracks/artists for the last 4 weeks &
@@ -73,10 +60,27 @@
                     <span class="tech">Technologies -</span> Object Oriented
                     Javascript, GSAP
                   </span>
-                </p>
+                </a>
 
-                <p href="#" class="work-3 work">
-                  <a href="#" class="work-name" target="_blank">UNKNOWN.</a>
+                <a
+                  href="https://545dictionary.netlify.app/"
+                  target="_blank"
+                  class="work-2 work"
+                >
+                  <p class="work-name">DICTIONARY.</p>
+
+                  <span class="work-details">
+                    A dictionary website which uses the dictionary api to enable
+                    users search for the meaning of words, their phonetic
+                    transcriptions(voiced), synonyms, antonyms and how to use
+                    the word in a sentence.<br />
+                    <span class="tech">Technologies -</span> Object Oriented
+                    Javascript
+                  </span>
+                </a>
+
+                <a href="#" target="_blank" class="work-3 work">
+                  <p class="work-name">UNKNOWN.</p>
                   <span class="work-details">
                     A dictionary website which uses the dictionary api to allow
                     users search for the meaning of words, phonetic
@@ -85,7 +89,7 @@
                     <span class="tech">Technologies -</span> Object Oriented
                     Javascript
                   </span>
-                </p>
+                </a>
               </div>
             </section>
 
@@ -106,28 +110,50 @@
           </div>
         </div>
 
-        <div class="current-page"></div>
+        <div class="inner-side">
+          <div class="current-page">
+            <span class="current-page-inner">
+              <p class="page-name page-1">ABOUT.</p>
+
+              <!-- <p class="page-name page-2">WORKS.</p>
+
+              <p class="page-name page-3">PLAY.</p> -->
+            </span>
+          </div>
+        </div>
       </main>
 
       <footer>
         <div class="inner-footer">
           <div class="navigation">
             <span class="dot-cont dot-cont-1">
-              <div class="dot dot-1 active-page" data-nav="1"></div>
+              <div
+                class="dot dot-1 active-page"
+                data-nav="1"
+                data-section-name="ABOUT."
+              ></div>
               <p class="nav-title nav-title-1 active-page">ABOUT</p>
             </span>
 
             <span class="dot-cont dot-cont-2">
-              <div class="dot dot-2" data-nav="2"></div>
+              <div
+                class="dot dot-2"
+                data-nav="2"
+                data-section-name="WORKS."
+              ></div>
               <p class="nav-title nav-title-2">WORKS</p>
             </span>
 
             <span class="dot-cont dot-cont-3">
-              <div class="dot dot-3" data-nav="3"></div>
+              <div
+                class="dot dot-3"
+                data-nav="3"
+                data-section-name="PLAY."
+              ></div>
               <p class="nav-title nav-title-3">PLAY</p>
             </span>
 
-            <span class="dot-info"> CLICK DOTS TO CHANGE PAGES</span>
+            <span class="dot-info"> CLICK DOTS TO CHANGE SECTIONS</span>
           </div>
 
           <a
