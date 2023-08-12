@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Bricolage Grotesque", sans-serif;
+  --bg-color: #000;
+  font-size: 16px;
+  --text-color: #fff;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+
+  .navbar,
+  footer {
+    display: flex;
+    align-items: center;
+    padding: 1rem 4rem;
+    height: 10%;
+    color: var(--text-color);
+
+    .inner-nav,
+    .inner-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 50%;
+    }
+
+    .date,
+    .time {
+      cursor: default;
+      font-size: 0.85rem;
+      font-weight: 200;
+    }
+  }
+
+  .navbar {
+    border-bottom: solid 1px var(--text-color);
+  }
+
+  main {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    background-color: var(--bg-color);
+
+    & > * {
+      color: var(--text-color);
+    }
+
+    .inner-main {
+      width: 90%;
+      height: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      display: flex;
+
+      .sections {
+        display: flex;
+        overflow: hidden;
+        height: 100%;
+        scroll-snap-type: x mandatory;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        section {
+          display: block;
+          width: 100%;
+          flex-shrink: 0;
+          height: 100%;
+          scroll-snap-align: start;
+        }
+
+        .section-1 {
+          padding: 2rem 4rem;
+
+          .name {
+            font-size: 8rem;
+            cursor: default;
+          }
+          .hov-split {
+            font-size: inherit;
+            transition: linear 0.3s;
+
+            &:hover {
+              color: red;
+            }
+          }
+
+          .role {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: darken($color: #fff, $amount: 20);
+            font-weight: 300;
+          }
+
+          .bio {
+            font-weight: 200;
+            width: 70%;
+            font-size: 0.85rem;
+          }
+        }
+
+        .section-2 {
+          display: flex;
+          align-items: center;
+
+          .inner-section {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .recent {
+              margin-top: 1rem;
+              margin-left: 4rem;
+              font-size: 0.85rem;
+              font-weight: 200;
+              cursor: default;
+            }
+
+            .work {
+              display: flex;
+              align-items: center;
+              padding: 1rem 4rem;
+
+              a {
+                width: fit-content;
+                font-size: 5rem;
+                font-weight: 600;
+                text-decoration: none;
+                color: var(--text-color);
+                flex-basis: 55%;
+                transition: linear 0.3s;
+
+                &:hover {
+                  text-decoration: line-through;
+                  color: red;
+                }
+
+                &:hover ~ .work-details {
+                  opacity: 1;
+                }
+              }
+
+              .work-details {
+                opacity: 0;
+                font-size: 0.85rem;
+                line-height: 1.5rem;
+                flex-basis: 45%;
+                font-weight: 200;
+                transition: linear 0.3s;
+
+                .tech {
+                  font-size: inherit;
+                  color: red;
+                  font-weight: inherit;
+                  text-transform: uppercase;
+                }
+
+                &:hover {
+                  display: block;
+                }
+              }
+            }
+
+            .work-1,
+            .work-2 {
+              border-bottom: solid 1px var(--text-color);
+            }
+          }
+        }
+      }
+    }
+
+    .current-page {
+      width: 10%;
+      height: 100%;
+      border-left: solid 1px var(--text-color);
+    }
+  }
+
+  footer {
+    border-top: solid 1px var(--text-color);
+    display: flex;
+    justify-content: space-between;
+
+    .inner-footer-2 {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .inner-footer {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      .navigation {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+
+        .dot-info {
+          font-size: 0.75rem;
+          font-weight: 200;
+          cursor: default;
+          color: lighten($color: #000, $amount: 65);
+        }
+
+        .dot-cont {
+          margin-right: 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .nav-title {
+            font-size: 0.85rem;
+            font-weight: 200;
+            margin-bottom: 0.5rem;
+            transition: linear 0.3s;
+            opacity: 0;
+            color: red;
+            cursor: default;
+          }
+
+          .dot {
+            order: 1;
+            width: 0.75rem;
+            height: 0.75rem;
+            border: Solid 1px var(--text-color);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: linear 0.3s;
+
+            &:hover {
+              background-color: red;
+            }
+          }
+
+          div.active-page {
+            background-color: red;
+          }
+
+          p.active-page {
+            opacity: 1;
+          }
+
+          .dot:hover ~ .nav-title {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .footer-link {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 200;
+      color: var(--text-color);
+      text-decoration: none;
+      transition: linear 0.3s;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
