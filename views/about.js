@@ -18,7 +18,6 @@ class AboutSection {
     });
     //clear the inner html of that element
     const joined = splitArray.join("");
-    console.log(joined);
     el.innerHTML = "";
     el.innerHTML = joined;
   }
