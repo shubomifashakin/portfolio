@@ -9,7 +9,7 @@ const params = new URLSearchParams(window.location.search).get("code");
 //after we have gotten a code spotify redirects to url
 if (!params) {
   document.location.href =
-    "https://accounts.spotify.com/authorize?response_type=code&client_id=d1ea2b45fa074764af0f2a9ba2dcb9d0&scope=playlist-read-collaborative%20playlist-read-private%20user-read-currently-playing&redirect_uri=http://localhost:5173/";
+    "https://accounts.spotify.com/authorize?response_type=code&client_id=d1ea2b45fa074764af0f2a9ba2dcb9d0&scope=playlist-read-collaborative%20playlist-read-private%20user-read-currently-playing&redirect_uri=https://olashubomi.netlify.app/";
 } else {
   //when spotify redirects to our url, remove all search params from our url
 

@@ -3,7 +3,6 @@ class auth {
   clientID = import.meta.env.VITE_CLIENT_ID;
   SPOTIFY_ID = import.meta.env.VITE_SPOTIFY_ID;
   clientSecret = import.meta.env.VITE_CLIENT_SECRET;
-  // console.log(clientSecret);
 
   airtableId = import.meta.env.VITE_AIRTABLE_ID;
   airtableKey = import.meta.env.VITE_AIRTABLE_KEY;
