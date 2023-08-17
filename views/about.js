@@ -1,11 +1,18 @@
+import { gsap } from "gsap";
+
 class AboutSection {
   sectContainer = document.querySelector(".about");
   lastName = document.querySelector(".last-name");
-  firstName = document.querySelector(".first-name");
+  firstNameContainer = document.querySelector(".first-names");
+  firstName1 = document.querySelector(".first-name-1");
+  firstName2 = document.querySelector(".first-name-2");
 
   constructor() {
     this.splitText(this.lastName);
-    this.splitText(this.firstName);
+    this.splitText(this.firstName1);
+    this.splitText(this.firstName2);
+
+    this.firstNameHover();
   }
 
   splitText(el) {
@@ -20,6 +27,32 @@ class AboutSection {
     const joined = splitArray.join("");
     el.innerHTML = "";
     el.innerHTML = joined;
+  }
+
+  firstNameHover() {
+    let timeline;
+    this.firstNameContainer.addEventListener("mouseenter", () => {
+      const tl = gsap.timeline({
+        defaults: { duration: 0.05, ease: "ease-in-out" },
+      });
+
+      timeline = tl;
+
+      tl.to(this.firstName1.querySelectorAll("span"), {
+        stagger: 0.02,
+        rotateX: "-90deg",
+        color: "#000",
+      }).to(
+        this.firstName2.querySelectorAll("span"),
+        { stagger: 0.03, rotateX: "0deg" },
+        "<"
+      );
+    });
+
+    this.firstNameContainer.addEventListener("mouseleave", () => {
+      timeline.timeScale(4);
+      timeline.reverse();
+    });
   }
 }
 

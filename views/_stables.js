@@ -26,24 +26,26 @@ class Stables {
         }
       });
 
+      let tl;
       c.querySelector(".dot").addEventListener("mouseenter", () => {
-        gsap.to(this.mouseEl, {
-          background: "rgba(255, 255, 255, 0.1)",
-          borderRadius: "50%",
-          padding: "0.5rem",
-        });
+        const timeline = gsap.timeline({ defaults: { duration: 0.5 } });
+
+        tl = timeline;
+
+        timeline
+          .to(this.mouseEl, {
+            background: "rgba(255, 255, 255, 0.1)",
+            borderRadius: "50%",
+            padding: "0.5rem",
+          })
+          .to(".page-name", { color: "red" }, "<");
       });
 
       c.querySelector(".dot").addEventListener("mouseleave", () => {
-        gsap.to(this.mouseEl, {
-          background: "rgba(255, 0, 0, 0.3)",
-          borderRadius: "0%",
-          padding: "0rem",
-        });
+        tl.timeScale(2.5);
+        tl.reverse();
       });
     });
-
-    // this.dotContainerBlink();
   }
 
   mouseHoverEffect() {
@@ -88,7 +90,7 @@ class Stables {
 
     this.timeEl.textContent = new Intl.DateTimeFormat(navigator.language, {
       timeStyle: "medium",
-      hourCycle: "h23",
+      hourCycle: "h12",
       hour12: true,
     })
       .format(new Date())

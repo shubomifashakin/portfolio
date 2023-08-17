@@ -120,6 +120,7 @@ body {
 }
 #app main .inner-main .sections .section-1 {
   padding: 2rem 4rem;
+  border-bottom: solid 1px var(--text-color);
 }
 #app main .inner-main .sections .section-1 .recent {
   font-size: 0.85rem;
@@ -131,7 +132,34 @@ body {
   font-size: 8rem;
   font-weight: 700;
 }
+#app main .inner-main .sections .section-1 .first-names {
+  position: relative;
+}
+#app main .inner-main .sections .section-1 .first-names .first-name-1 {
+  transform-origin: bottom;
+  display: inline-block;
+}
+#app main .inner-main .sections .section-1 .first-names .first-name-1 .hov-split {
+  display: inline-block;
+  transform: scaleY();
+  transform-origin: inherit;
+}
+#app main .inner-main .sections .section-1 .first-names .first-name-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  transform-origin: top;
+  height: 100%;
+  display: inline-block;
+}
+#app main .inner-main .sections .section-1 .first-names .first-name-2 .hov-split {
+  transform-origin: inherit;
+  font-size: inherit;
+  transform: rotateX(90deg);
+}
 #app main .inner-main .sections .section-1 .hov-split {
+  display: inline-block;
   font-size: inherit;
   transition: linear 0.3s;
 }
@@ -170,8 +198,27 @@ body {
 #app main .inner-main .sections .section-2 .inner-section .work {
   display: flex;
   align-items: center;
-  padding: 1rem 4rem;
   text-decoration: none;
+  position: relative;
+  transition: linear 0.3s;
+  border-bottom: solid 1px var(--text-color);
+}
+#app main .inner-main .sections .section-2 .inner-section .work::before {
+  content: " ";
+  display: block;
+  height: 1px;
+  position: absolute;
+  background-color: var(--hover-color);
+  top: 100%;
+  width: 100%;
+  z-index: 20;
+  transition: linear 0.8s;
+  transform: scale(0);
+  transform-origin: left;
+  box-shadow: 0 0 10px var(--hover-color);
+}
+#app main .inner-main .sections .section-2 .inner-section .work:hover::before {
+  transform: scale(1);
 }
 #app main .inner-main .sections .section-2 .inner-section .work:hover > p {
   text-decoration: line-through;
@@ -181,6 +228,7 @@ body {
   opacity: 1;
 }
 #app main .inner-main .sections .section-2 .inner-section .work p {
+  padding: 1rem 4rem;
   width: -moz-fit-content;
   width: fit-content;
   font-size: 5rem;
@@ -205,21 +253,51 @@ body {
   font-weight: inherit;
   text-transform: uppercase;
 }
-#app main .inner-main .sections .section-2 .inner-section .work-1,
-#app main .inner-main .sections .section-2 .inner-section .work-2 {
-  transition: linear 0.3s;
-  border-bottom: solid 1px var(--text-color);
-}
-#app main .inner-main .sections .section-2 .inner-section .work-1:hover,
-#app main .inner-main .sections .section-2 .inner-section .work-2:hover {
-  border-bottom: solid 1px var(--hover-color);
-}
 #app main .inner-main .sections .section-3 {
   position: relative;
 }
+#app main .inner-main .sections .section-3 .error-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  position: relative;
+}
+#app main .inner-main .sections .section-3 .error-section .inner-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#app main .inner-main .sections .section-3 .error-section .inner-error p {
+  font-size: 1rem;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+#app main .inner-main .sections .section-3 .error-section .inner-error .retry-btn {
+  outline: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  font-weight: 200;
+  background: none;
+  color: var(--text-color);
+  border: Solid 2px var(--text-color);
+  transition: linear 0.3s;
+  text-transform: uppercase;
+}
+#app main .inner-main .sections .section-3 .error-section .inner-error .retry-btn:hover {
+  border-color: var(--hover-color);
+  color: var(--hover-color);
+}
 #app main .inner-main .sections .section-3 .playlist-image {
   opacity: 0;
-  display: block;
+  display: flex;
+  justify-content: center;
   height: 80%;
   width: 80%;
   position: absolute;
@@ -234,7 +312,10 @@ body {
   -o-object-fit: contain;
      object-fit: contain;
   height: 100%;
-  width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  filter: grayscale(40%);
+  justify-self: center;
 }
 #app main .inner-main .sections .section-3 .inner-section {
   width: 100%;
@@ -245,8 +326,43 @@ body {
   z-index: 6;
   position: relative;
 }
-#app main .inner-main .sections .section-3 .inner-section .recent {
+#app main .inner-main .sections .section-3 .inner-section .headers {
+  display: flex;
+  align-items: center;
   margin-top: 1rem;
+  justify-content: space-between;
+}
+#app main .inner-main .sections .section-3 .inner-section .headers .currently {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-right: 4rem;
+}
+#app main .inner-main .sections .section-3 .inner-section .headers .currently .refresh-btn {
+  font-size: 0.85rem;
+  color: red;
+  background: none;
+  outline: none;
+  margin-left: 1rem;
+}
+#app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing {
+  font-weight: 200;
+  font-size: 0.85rem;
+  color: var(--text-color);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing > * {
+  text-decoration: none;
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-size: inherit;
+  transition: linear 0.3s;
+}
+#app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing > *:hover {
+  color: var(--hover-color);
+}
+#app main .inner-main .sections .section-3 .inner-section .recent {
   margin-left: 4rem;
   font-size: 0.85rem;
   font-weight: 200;
@@ -259,6 +375,25 @@ body {
   text-decoration: none;
   justify-content: center;
   text-align: center;
+  position: relative;
+  transition: linear 0.3s;
+  border-bottom: solid 1px var(--text-color);
+}
+#app main .inner-main .sections .section-3 .inner-section .playlist::before {
+  content: " ";
+  display: block;
+  height: 1px;
+  position: absolute;
+  background-color: var(--hover-color);
+  top: 100%;
+  width: 100%;
+  z-index: 20;
+  transition: linear 0.8s;
+  transform: scale(0);
+  transform-origin: center;
+}
+#app main .inner-main .sections .section-3 .inner-section .playlist:hover::before {
+  transform: scale(1);
 }
 #app main .inner-main .sections .section-3 .inner-section .playlist:hover > p {
   text-decoration: line-through;
@@ -279,15 +414,6 @@ body {
   transition: linear 0.3s;
   pointer-events: none;
 }
-#app main .inner-main .sections .section-3 .inner-section .playlist-1,
-#app main .inner-main .sections .section-3 .inner-section .playlist-2 {
-  transition: linear 0.3s;
-  border-bottom: solid 1px var(--text-color);
-}
-#app main .inner-main .sections .section-3 .inner-section .playlist-1:hover,
-#app main .inner-main .sections .section-3 .inner-section .playlist-2:hover {
-  border-bottom: solid 1px var(--hover-color);
-}
 #app main .inner-main .sections .section-3 .playlist:hover + .playlist-image {
   display: block;
 }
@@ -295,6 +421,7 @@ body {
   width: 10%;
   height: 100%;
   border-left: solid 1px var(--text-color);
+  border-bottom: solid 1px var(--text-color);
 }
 #app main .inner-side .current-page {
   width: 100%;
@@ -330,7 +457,6 @@ body {
   color: var(--hover-color) !important;
 }
 #app footer {
-  border-top: solid 1px var(--text-color);
   display: flex;
   justify-content: space-between;
 }
