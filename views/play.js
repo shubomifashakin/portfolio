@@ -17,7 +17,10 @@ class Playlist {
 
   constructor() {
     this.showPlayLists();
-    this.refreshCurrentlyPlaying();
+
+    //PREVIOUS JAVASCRIPT CODE USING SPOTIFY AUTHORIZATION FLOW TO ACCESS currently playing (uncomment to use)
+
+    // this.refreshCurrentlyPlaying();
   }
 
   //checks what i am listening to every 30 seconds
@@ -39,7 +42,7 @@ class Playlist {
     //if the totaltime passed since we created our last access token has not passed 3600(1 hour), keep using that access token
     if (elapsedTime < dat.fields.TIME) {
       const playingData = await this.getCurrentlyPlaying(authVars.token);
-      // console.log(playingData);
+      console.log(playingData);
       this.parsePlayingHtml(playingData.item);
     }
   }
