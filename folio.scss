@@ -141,8 +141,10 @@ body {
 
           .first-names {
             position: relative;
-            // width: fit-content;
+            width: fit-content;
+            padding-right: 1rem;
             // display: inline-block;
+            // border: solid 1px blue;
 
             .first-name-1 {
               transform-origin: bottom;
@@ -163,7 +165,6 @@ body {
               transform-origin: top;
               height: 100%;
               display: inline-block;
-              // border: solid 1px red;
 
               .hov-split {
                 transform-origin: inherit;
@@ -296,6 +297,7 @@ body {
             justify-content: center;
             z-index: 6;
             position: relative;
+            border-bottom: solid 1px var(--text-color);
 
             .inner-error {
               display: flex;
@@ -313,7 +315,7 @@ body {
                 outline: none;
                 border: none;
                 padding: 0.5rem 1rem;
-                margin-top: 0.5rem;
+                margin-top: 1rem;
                 font-size: 1.25rem;
                 border-radius: 5px;
                 font-weight: 200;

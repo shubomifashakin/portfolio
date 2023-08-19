@@ -18,57 +18,24 @@ class Playlist {
   constructor() {
     this.showPlayLists();
 
+    this.errorBtn.addEventListener("click", this.handleError.bind(this));
+
     //PREVIOUS JAVASCRIPT CODE USING SPOTIFY AUTHORIZATION FLOW TO ACCESS currently playing (uncomment to use)
 
     // this.refreshCurrentlyPlaying();
   }
 
-  //checks what i am listening to every 30 seconds
-  async refreshCurrentlyPlaying() {
-    setInterval(async () => {
-      await this.checkIfTokenIsValid();
-    }, 1000 * 30);
-  }
+  //gets the playlists and shows them on our html
+  async showPlayLists() {
+    const { playlistData, playingData } = await this.getPlaylistAndPlaying(
+      authVars.SPOTIFY_ID
+    );
 
-  //checks if access token is valid then checks what i am currently listening to with it
-  async checkIfTokenIsValid() {
-    const dat = await authVars.base("spotData").find("recWBanJS64gcwbvL");
+    //show what i a currently listening to in user interface
+    this.parsePlayingHtml(playingData);
 
-    //get the total time elapsed since our last access token was created
-    const timeNow = new Date();
-    const elapsedTime =
-      Math.floor(timeNow - new Date(dat.fields.CREATED)) / 1000;
-
-    //if the totaltime passed since we created our last access token has not passed 3600(1 hour), keep using that access token
-    if (elapsedTime < dat.fields.TIME) {
-      const playingData = await this.getCurrentlyPlaying(authVars.token);
-      console.log(playingData);
-      this.parsePlayingHtml(playingData.item);
-    }
-  }
-
-  //gets the track i am currently listening to
-  async getCurrentlyPlaying(token) {
-    try {
-      const request = await fetch(
-        `https://api.spotify.com/v1/me/player/currently-playing`,
-        {
-          method: "GET",
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-
-      if (!request.ok) {
-        throw new Error(`An error occurred ${error.status}`);
-      }
-      const playingData = await this.handlePlayingFetch(request);
-
-      return playingData;
-    } catch (err) {
-      this.currentlyPlaying.innerHTML = "";
-      this.currentlyPlaying.insertAdjacentHTML("beforeend", `<p>${err}</p>`);
-      throw err;
-    }
+    //show my playlists in user interface
+    this.parsePlaylistHtml(playlistData);
   }
 
   //get my playlists and the song im currenty listening to(if i am listening to one)
@@ -136,19 +103,6 @@ class Playlist {
     return playingDatas;
   }
 
-  //gets the playlists and shows them on our html
-  async showPlayLists() {
-    const { playlistData, playingData } = await this.getPlaylistAndPlaying(
-      authVars.SPOTIFY_ID
-    );
-
-    //show what i a currently listening to in user interface
-    this.parsePlayingHtml(playingData);
-
-    //show my playlists in user interface
-    this.parsePlaylistHtml(playlistData);
-  }
-
   parsePlayingHtml(playingData) {
     //if i am not listening to anything or whats currently playing is not a song, do this
     if (typeof playingData === "string" || playingData?.type !== "track") {
@@ -202,6 +156,59 @@ class Playlist {
     });
 
     StableUi.mouseHoverEffect();
+  }
+
+  //checks what i am listening to every 30 seconds
+  async refreshCurrentlyPlaying() {
+    setInterval(async () => {
+      await this.checkIfTokenIsValid();
+    }, 1000 * 30);
+  }
+
+  //checks if access token is valid then checks what i am currently listening to with it
+  async checkIfTokenIsValid() {
+    const dat = await authVars.base("spotData").find("recWBanJS64gcwbvL");
+
+    //get the total time elapsed since our last access token was created
+    const timeNow = new Date();
+    const elapsedTime =
+      Math.floor(timeNow - new Date(dat.fields.CREATED)) / 1000;
+
+    //if the totaltime passed since we created our last access token has not passed 3600(1 hour), keep using that access token
+    if (elapsedTime < dat.fields.TIME) {
+      const playingData = await this.getCurrentlyPlaying(authVars.token);
+      console.log(playingData);
+      this.parsePlayingHtml(playingData.item);
+    }
+  }
+
+  //gets the track i am currently listening to
+  async getCurrentlyPlaying(token) {
+    try {
+      const request = await fetch(
+        `https://api.spotify.com/v1/me/player/currently-playing`,
+        {
+          method: "GET",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      if (!request.ok) {
+        throw new Error(`An error occurred ${error.status}`);
+      }
+      const playingData = await this.handlePlayingFetch(request);
+
+      return playingData;
+    } catch (err) {
+      this.currentlyPlaying.innerHTML = "";
+      this.currentlyPlaying.insertAdjacentHTML("beforeend", `<p>${err}</p>`);
+      throw err;
+    }
+  }
+
+  handleError() {
+    //check if there is an access token already
+    this.getPlaylistAndPlaying(authVars.SPOTIFY_ID);
   }
 }
 export const playListUi = new Playlist();

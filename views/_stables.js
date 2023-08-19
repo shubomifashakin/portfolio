@@ -91,7 +91,7 @@ class Stables {
     this.timeEl.textContent = new Intl.DateTimeFormat(navigator.language, {
       timeStyle: "medium",
       hourCycle: "h12",
-      hour12: true,
+      // hour12: true,
     })
       .format(new Date())
       .toUpperCase();

@@ -3,6 +3,7 @@ import { AboutSect } from "./views/about";
 import "./actions/auth";
 import { playListUi } from "./views/play";
 
+import { gsap } from "gsap";
 //PREVIOUS JAVASCRIPT CODE USING SPOTIFY AUTHORIZATION FLOW TO ACCESS currently playing (uncomment to use)
 
 /** 
@@ -42,7 +43,14 @@ document.addEventListener("visibilitychange", function () {
 
 //our mouse styles
 const mouseEl = document.querySelector(".mouse");
+//when mouse is in the document show mouse
 document.addEventListener("mousemove", function (e) {
+  gsap.to(mouseEl, { opacity: 1 });
   mouseEl.style.top = `${e.clientY}px`;
   mouseEl.style.left = `${e.clientX}px`;
+});
+
+//when mouse leaves doc hide mouse
+document.addEventListener("mouseleave", function (e) {
+  gsap.to(mouseEl, { opacity: 0 });
 });

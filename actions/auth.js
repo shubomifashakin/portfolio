@@ -77,6 +77,9 @@ class auth {
 
       /** Also uncomment HERE
 
+      //sets the initial refresh token
+      this.token = response.refresh_token;
+
       //update our airtable
        this.updateAirtable(response);
 
