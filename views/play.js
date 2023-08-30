@@ -60,7 +60,7 @@ class Playlist {
       ]);
 
       if (!request[0].ok && !request[1].ok) {
-        throw new Error(`An error occurred ${error.status}`);
+        throw new Error(`An error occurred ${request.status}`);
       }
 
       const [playLists, playing] = request;
@@ -194,7 +194,7 @@ class Playlist {
       );
 
       if (!request.ok) {
-        throw new Error(`An error occurred ${error.status}`);
+        throw new Error(`An error occurred ${request.status}`);
       }
       const playingData = await this.handlePlayingFetch(request);
 

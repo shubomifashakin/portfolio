@@ -43,7 +43,7 @@ class auth {
       });
 
       if (!request.ok) {
-        throw new Error(`An error occurred ${error.status}`);
+        throw new Error(`An error occurred ${request.status}`);
       }
 
     **/
@@ -66,7 +66,7 @@ class auth {
       });
 
       if (!request.ok) {
-        throw new Error(`An error occurred ${error.status}`);
+        throw new Error(`An error occurred ${request.status}`);
       }
       //to HERE
 

@@ -131,7 +131,7 @@ body {
             font-size: 0.85rem;
             font-weight: 200;
             display: none;
-            color: var(--hover-color);
+            color: darken($color: #fff, $amount: 30);
           }
 
           .name {
@@ -215,7 +215,7 @@ body {
               margin-left: 4rem;
               font-size: 0.85rem;
               font-weight: 200;
-              color: var(--hover-color);
+              color: darken($color: #fff, $amount: 30);
             }
 
             .work {
@@ -416,7 +416,7 @@ body {
               margin-left: 4rem;
               font-size: 0.85rem;
               font-weight: 200;
-              color: var(--hover-color);
+              color: darken($color: #fff, $amount: 30);
             }
 
             .playlist {

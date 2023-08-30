@@ -126,7 +126,7 @@ body {
   font-size: 0.85rem;
   font-weight: 200;
   display: none;
-  color: var(--hover-color);
+  color: #b3b3b3;
 }
 #app main .inner-main .sections .section-1 .name {
   font-size: 8rem;
@@ -196,7 +196,7 @@ body {
   margin-left: 4rem;
   font-size: 0.85rem;
   font-weight: 200;
-  color: var(--hover-color);
+  color: #b3b3b3;
 }
 #app main .inner-main .sections .section-2 .inner-section .work {
   display: flex;
@@ -371,7 +371,7 @@ body {
   margin-left: 4rem;
   font-size: 0.85rem;
   font-weight: 200;
-  color: var(--hover-color);
+  color: #b3b3b3;
 }
 #app main .inner-main .sections .section-3 .inner-section .playlist {
   display: flex;
