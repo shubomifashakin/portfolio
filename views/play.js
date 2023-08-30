@@ -22,7 +22,7 @@ class Playlist {
 
     //PREVIOUS JAVASCRIPT CODE USING SPOTIFY AUTHORIZATION FLOW TO ACCESS currently playing (uncomment to use)
 
-    // this.refreshCurrentlyPlaying();
+    this.refreshCurrentlyPlaying();
   }
 
   //gets the playlists and shows them on our html
@@ -40,6 +40,8 @@ class Playlist {
 
   //get my playlists and the song im currenty listening to(if i am listening to one)
   async getPlaylistAndPlaying(spotifyId) {
+    //hide the error section
+    this.hideErrorSection();
     try {
       //receives the token
       const token = await authVars.getToken();
@@ -66,27 +68,24 @@ class Playlist {
       const [playLists, playing] = request;
 
       //gets json of playingData
-      const playingDatas = await this.handlePlayingFetch(playing);
+      const playingDat = await this.handlePlayingFetch(playing);
 
       //converts playlist data to json
       const playlistData = await playLists.json();
 
       return {
-        playingData: playingDatas.item ? playingDatas.item : playingDatas,
+        playingData: playingDat.item ? playingDat.item : playingDat,
         playlistData: playlistData.items,
       };
     } catch (err) {
-      this.errorText.textContent = err;
-      gsap.to(this.innerSection, { display: "none" });
-      gsap.to(this.errorSection, { display: "flex" });
-
+      this.showErrorSection(err);
       throw err;
     }
   }
 
   //spotify does not return a json when a user is not listening to anything. so we test if it is a json
   async handlePlayingFetch(playing) {
-    let playingDatas;
+    let playingDat;
 
     //test if the settled promise is a json. This only occurs when i am not listening to anything
     try {
@@ -94,13 +93,13 @@ class Playlist {
       const playingData2 = await playing.json();
 
       //if it is not a json, it short-circuits and skips this step,the error is caught in the catch block
-      playingDatas = playingData2;
+      playingDat = playingData2;
     } catch (err) {
       //here we set the outer playingData variable to this string indicating that nothing is currently being played
-      playingDatas = "i am not listening to anything at the moment";
+      playingDat = "i am not listening to anything at the moment";
     }
 
-    return playingDatas;
+    return playingDat;
   }
 
   parsePlayingHtml(playingData) {
@@ -109,7 +108,7 @@ class Playlist {
       this.currentlyPlaying.innerHTML = "";
       this.currentlyPlaying.insertAdjacentHTML(
         "beforeend",
-        `<p>i am not listening to anything at the moment</p>`
+        `<p class="not-playing">i am not listening to anything at the moment</p>`
       );
     } else {
       this.currentlyPlaying.innerHTML = "";
@@ -177,7 +176,11 @@ class Playlist {
     //if the totaltime passed since we created our last access token has not passed 3600(1 hour), keep using that access token
     if (elapsedTime < dat.fields.TIME) {
       const playingData = await this.getCurrentlyPlaying(authVars.token);
-      console.log(playingData);
+      this.parsePlayingHtml(playingData.item);
+    } else {
+      //request a new access token and use that access token
+      const newAccessToken = await authVars.getToken();
+      const playingData = await this.getCurrentlyPlaying(newAccessToken);
       this.parsePlayingHtml(playingData.item);
     }
   }
@@ -207,8 +210,19 @@ class Playlist {
   }
 
   handleError() {
-    //check if there is an access token already
-    this.getPlaylistAndPlaying(authVars.SPOTIFY_ID);
+    //try getting the playlist and currently playing again
+    this.showPlayLists();
+  }
+
+  showErrorSection(err) {
+    this.errorText.textContent = err;
+    gsap.to(this.innerSection, { display: "none" });
+    gsap.to(this.errorSection, { display: "flex" });
+  }
+
+  hideErrorSection() {
+    gsap.to(this.innerSection, { display: "flex" });
+    gsap.to(this.errorSection, { display: "none" });
   }
 }
 export const playListUi = new Playlist();

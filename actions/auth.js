@@ -1,8 +1,10 @@
 import * as airtable from "airtable";
+import { timeOut } from "./timeout";
 class auth {
   clientID = import.meta.env.VITE_CLIENT_ID;
   SPOTIFY_ID = import.meta.env.VITE_SPOTIFY_ID;
   clientSecret = import.meta.env.VITE_CLIENT_SECRET;
+  refreshToken = import.meta.env.VITE_REFRESH_TOKEN;
 
   airtableId = import.meta.env.VITE_AIRTABLE_ID;
   airtableKey = import.meta.env.VITE_AIRTABLE_KEY;
@@ -24,70 +26,42 @@ class auth {
   }
 
   async getToken() {
-    //PREVIOUS JAVASCRIPT CODE USING SPOTIFY AUTHORIZATION FLOW TO ACCESS currently playing (uncomment to use)
-
-    /** 
-    // //get the code from our url and append our code and secrets to the url
-
-     const code = new URLSearchParams(window.location.search).get("code");
-   const data = new URLSearchParams();
-   data.append("client_id", this.clientID);
-   data.append("client_secret", this.clientSecret);
-   data.append("grant_type", "authorization_code");
-   data.append("code", code);
-   data.append("redirect_uri", this.redirect_uri);
-   try {
-      const request = await fetch(this.url, {
-        method: "POST",
-        body: data,
-      });
-
-      if (!request.ok) {
-        throw new Error(`An error occurred ${request.status}`);
-      }
-
-    **/
-
-    //if you want to use previous code, comment out from HERE
-    const data = new URLSearchParams();
-    data.append("grant_type", "client_credentials");
-
     let authString64 = btoa(`${this.clientID}:${this.clientSecret}`);
 
+    //required post headers
     let header = new Headers();
     header.append("Authorization", `Basic ${authString64}`);
     header.append("Content-Type", "application/x-www-form-urlencoded");
 
+    //required post body
+    let bodyData = new URLSearchParams();
+    bodyData.append("refresh_token", this.refreshToken);
+    bodyData.append("grant_type", "refresh_token");
+
     try {
-      const request = await fetch(this.url, {
-        method: "POST",
-        headers: header,
-        body: data.toString(),
-      });
+      const request = await Promise.race([
+        fetch(this.url, {
+          method: "POST",
+          body: bodyData,
+          headers: header,
+        }),
+        timeOut(),
+      ]);
 
       if (!request.ok) {
         throw new Error(`An error occurred ${request.status}`);
       }
-      //to HERE
 
       const response = await request.json();
 
       //sets the initial access token
       this.token = response.access_token;
 
-      /** Also uncomment HERE
-
-      //sets the initial refresh token
-      this.token = response.refresh_token;
-
       //update our airtable
-       this.updateAirtable(response);
-
-      **/
+      this.updateAirtable(response);
 
       return response.access_token;
     } catch (err) {
-      console.log(err);
       throw err;
     }
   }
@@ -98,7 +72,7 @@ class auth {
       {
         id: "recWBanJS64gcwbvL",
         fields: {
-          TOKEN: `${response.refresh_token}`,
+          TOKEN: `${response.access_token}`,
           TIME: `${response.expires_in}`,
           CREATED: `${new Date()}`,
         },

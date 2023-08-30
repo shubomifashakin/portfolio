@@ -195,7 +195,7 @@ body {
   margin-top: 1rem;
   margin-left: 4rem;
   font-size: 0.85rem;
-  font-weight: 200;
+  font-weight: 600;
   color: #b3b3b3;
 }
 #app main .inner-main .sections .section-2 .inner-section .work {
@@ -357,11 +357,17 @@ body {
   text-decoration: none;
   text-transform: uppercase;
 }
+#app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing .not-playing {
+  color: gray;
+  text-decoration: none;
+}
 #app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing > * {
   text-decoration: none;
   color: var(--text-color);
   text-transform: uppercase;
+  text-decoration: underline;
   font-size: inherit;
+  font-weight: 600;
   transition: linear 0.3s;
 }
 #app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing > *:hover {
@@ -370,7 +376,7 @@ body {
 #app main .inner-main .sections .section-3 .inner-section .recent {
   margin-left: 4rem;
   font-size: 0.85rem;
-  font-weight: 200;
+  font-weight: 600;
   color: #b3b3b3;
 }
 #app main .inner-main .sections .section-3 .inner-section .playlist {
@@ -496,7 +502,7 @@ body {
 }
 #app footer .inner-footer .navigation .dot-cont .nav-title {
   font-size: 0.85rem;
-  font-weight: 200;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   transition: linear 0.3s;
   opacity: 0;
