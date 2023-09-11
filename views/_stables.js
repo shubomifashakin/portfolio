@@ -63,7 +63,7 @@ class Stables {
       c.addEventListener("mouseleave", () => {
         gsap.to(this.mouseEl, {
           background: "rgba(255, 0, 0, 0.3)",
-          borderRadius: "0%",
+          borderRadius: "5px",
           padding: "0",
           borderStyle: "solid",
           boxShadow: "none",

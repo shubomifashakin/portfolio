@@ -103,6 +103,7 @@ body {
   display: flex;
 }
 #app main .inner-main .sections {
+  width: 100%;
   display: flex;
   overflow: hidden;
   height: 100%;
@@ -125,7 +126,7 @@ body {
 #app main .inner-main .sections .section-1 .recent {
   font-size: 0.85rem;
   font-weight: 200;
-  display: none;
+  display: block;
   color: #b3b3b3;
 }
 #app main .inner-main .sections .section-1 .name {
@@ -380,7 +381,7 @@ body {
   color: #b3b3b3;
 }
 #app main .inner-main .sections .section-3 .inner-section .playlist {
-  display: flex;
+  display: block;
   align-items: center;
   padding: 1rem 4rem;
   text-decoration: none;
@@ -414,8 +415,7 @@ body {
   opacity: 1;
 }
 #app main .inner-main .sections .section-3 .inner-section .playlist p {
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   font-size: 4.5rem;
   font-weight: 600;
   text-decoration: none;
@@ -424,6 +424,7 @@ body {
   flex-basis: 55%;
   transition: linear 0.3s;
   pointer-events: none;
+  text-align: center;
 }
 #app main .inner-main .sections .section-3 .playlist:hover + .playlist-image {
   display: block;
@@ -551,7 +552,7 @@ body {
     opacity: 0.1;
   }
 }
-@media only screen and (max-width: 650px), (max-height: 550px) {
+@media only screen and (max-width: 650px), (max-height: 599px) {
   html {
     height: 100% !important;
   }
@@ -649,7 +650,7 @@ body {
     cursor: pointer !important;
   }
 }
-@media only screen and (min-width: 661px) and (max-width: 950px) and (min-height: 600px), (min-width: 900px) and (max-width: 1200px) and (min-height: 600px) and (max-height: 800px) {
+@media only screen and (min-width: 651px) and (max-width: 1200px) and (min-height: 599px), (min-width: 900px) and (max-width: 1200px) and (min-height: 600px) and (max-height: 800px) {
   body {
     overflow-y: auto;
     height: 100% !important;
@@ -726,6 +727,7 @@ body {
   #app main .inner-main .sections .section-2 .work .work-details {
     margin-top: 0.5rem !important;
     opacity: 1 !important;
+    width: 100% !important;
     font-size: 1.25rem !important;
     cursor: inherit !important;
   }
@@ -740,5 +742,61 @@ body {
   }
   #app footer .navigation {
     display: none !important;
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .date,
+  .time,
+  .country,
+  .recent,
+  .currently-playing > *,
+  .nav-title,
+  .footer-link,
+  .work-details,
+  .bio {
+    font-size: 1.15em !important;
+  }
+  .dot {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  .dot-info {
+    font-size: 1em !important;
+  }
+  .work p,
+  .playlist p {
+    font-size: 6rem !important;
+  }
+  .section-1 .name,
+  .page-name {
+    font-size: 9.5rem !important;
+  }
+}
+@media only screen and (min-width: 1601px) and (max-width: 1800px) {
+  .date,
+  .time,
+  .country,
+  .recent,
+  .currently-playing > *,
+  .nav-title,
+  .footer-link,
+  .work-details,
+  .bio {
+    font-size: 1.35em !important;
+  }
+  .dot {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+  .dot-info {
+    font-size: 1.25em !important;
+  }
+  .work p,
+  .playlist p {
+    font-size: 7rem !important;
+  }
+  .section-1 .name,
+  .page-name {
+    font-size: 10.5rem !important;
   }
 }/*# sourceMappingURL=folio.css.map */
