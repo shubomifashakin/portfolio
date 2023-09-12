@@ -125,7 +125,7 @@ body {
 }
 #app main .inner-main .sections .section-1 .recent {
   font-size: 0.85rem;
-  font-weight: 200;
+  font-weight: 600;
   display: block;
   color: #b3b3b3;
 }
@@ -621,6 +621,7 @@ body {
     align-items: flex-start;
     padding: 1rem 1rem !important;
     cursor: pointer !important;
+    opacity: 0.5;
   }
   #app main .inner-main .sections .section-2 .work p {
     width: 100% !important;
@@ -650,7 +651,7 @@ body {
     cursor: pointer !important;
   }
 }
-@media only screen and (min-width: 651px) and (max-width: 1200px) and (min-height: 599px), (min-width: 900px) and (max-width: 1200px) and (min-height: 600px) and (max-height: 800px) {
+@media only screen and (min-width: 651px) and (max-width: 1200px) and (min-height: 600px), (min-width: 900px) and (max-width: 1200px) and (min-height: 600px) and (max-height: 800px) {
   body {
     overflow-y: auto;
     height: 100% !important;

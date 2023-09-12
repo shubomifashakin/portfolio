@@ -130,7 +130,7 @@ body {
 
           .recent {
             font-size: 0.85rem;
-            font-weight: 200;
+            font-weight: 600;
             display: block;
             color: darken($color: #fff, $amount: 30);
           }
@@ -720,6 +720,7 @@ body {
               align-items: flex-start;
               padding: 1rem 1rem !important;
               cursor: pointer !important;
+              opacity: 0.5;
 
               p {
                 width: 100% !important;
@@ -762,7 +763,7 @@ body {
   }
 }
 
-@media only screen and (min-width: 651px) and (max-width: 1200px) and (min-height: 599px),
+@media only screen and (min-width: 651px) and (max-width: 1200px) and (min-height: 600px),
   (min-width: 900px) and (max-width: 1200px) and (min-height: 600px) and (max-height: 800px) {
   body {
     overflow-y: auto;
