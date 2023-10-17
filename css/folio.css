@@ -236,7 +236,7 @@ body {
   width: fit-content;
   width: -moz-fit-content;
   width: -webkit-fit-content;
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 600;
   text-decoration: none;
   color: var(--text-color);
@@ -383,7 +383,7 @@ body {
 #app main .inner-main .sections .section-3 .inner-section .playlist {
   display: block;
   align-items: center;
-  padding: 1rem 4rem;
+  padding: 1rem 0;
   text-decoration: none;
   justify-content: center;
   text-align: center;
