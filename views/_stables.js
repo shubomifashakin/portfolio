@@ -1,4 +1,7 @@
 import { gsap } from "gsap";
+import { polyfill } from "seamless-scroll-polyfill";
+
+polyfill();
 
 class Stables {
   mouseEl = document.querySelector(".mouse");
