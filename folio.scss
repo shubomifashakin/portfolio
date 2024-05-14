@@ -61,9 +61,8 @@ body {
       width: 50%;
     }
 
-    .date,
-    .time {
-      font-size: 0.85rem;
+    .sec-info {
+      font-size: 0.75rem;
       font-weight: 200;
     }
 
@@ -78,12 +77,6 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-
-    .country {
-      font-size: 0.85rem;
-      color: var(--text-color);
-      font-weight: 200;
-    }
   }
 
   .navbar {
@@ -151,7 +144,7 @@ body {
               transform-origin: bottom;
               // border: solid 1px blue;
               display: inline-block;
-              .hov-split {
+              .char {
                 display: inline-block;
                 transform: scaleY();
                 transform-origin: inherit;
@@ -167,7 +160,7 @@ body {
               height: 100%;
               display: inline-block;
 
-              .hov-split {
+              .char {
                 transform-origin: inherit;
                 font-size: inherit;
                 transform: rotateX(90deg);
@@ -176,7 +169,7 @@ body {
             }
           }
 
-          .hov-split {
+          .char {
             display: inline-block;
             font-size: inherit;
             transition: linear 0.3s;
@@ -279,9 +272,15 @@ body {
                 color: var(--text-color);
 
                 .tech {
-                  font-size: inherit;
+                  font-size: 0.75rem;
                   color: var(--hover-color);
                   font-weight: inherit;
+                  text-transform: uppercase;
+                }
+
+                .stack {
+                  color: darken($color: #fff, $amount: 30);
+                  font-size: 0.75rem;
                   text-transform: uppercase;
                 }
               }
@@ -393,28 +392,36 @@ body {
 
                 .currently-playing {
                   font-weight: 200;
-                  font-size: 0.85rem;
+                  font-size: 0.65rem;
                   color: var(--text-color);
-
+                  display: flex;
+                  column-gap: 0.25rem;
+                  align-items: center;
                   text-decoration: none;
                   text-transform: uppercase;
 
                   .not-playing {
                     color: darken($color: #fff, $amount: 50);
                     text-decoration: none;
+                    font-size: 0.65rem;
                   }
 
-                  > * {
+                  > #inner-playing {
                     text-decoration: none;
                     color: var(--text-color);
                     text-transform: uppercase;
-                    text-decoration: underline;
+                    text-decoration: none;
                     font-size: inherit;
                     font-weight: 600;
                     transition: linear 0.3s;
 
                     &:hover {
                       color: var(--hover-color);
+                    }
+
+                    > * {
+                      font-size: inherit;
+                      color: inherit;
                     }
                   }
                 }
@@ -560,7 +567,7 @@ body {
         justify-content: space-around;
 
         .dot-info {
-          font-size: 0.75rem;
+          font-size: 0.7rem;
           font-weight: 200;
           color: var(--text-color);
           animation: blink 2s infinite forwards ease-out;
@@ -672,9 +679,8 @@ body {
       width: 60% !important;
     }
 
-    .date,
-    .time {
-      font-size: 0.85rem;
+    .sec-info {
+      font-size: 0.75rem;
     }
 
     .date {
@@ -703,7 +709,8 @@ body {
             }
 
             .name {
-              font-size: 3rem !important;
+              font-size: 2.5rem !important;
+              line-height: 1.5em;
             }
 
             .bio {
@@ -719,14 +726,14 @@ body {
             .work {
               flex-direction: column;
               align-items: flex-start;
-              padding: 1rem 1rem !important;
+              padding: 1.5em 1rem !important;
               cursor: pointer !important;
               opacity: 0.5;
 
               p {
                 width: 100% !important;
                 padding: 1rem 0rem !important;
-                font-size: 3rem !important;
+                font-size: 2rem !important;
                 cursor: inherit !important;
               }
 
@@ -766,7 +773,7 @@ body {
 }
 
 @media only screen and (min-width: 651px) and (max-width: 1200px) and (min-height: 600px),
-  (min-width: 900px) and (max-width: 1350px) and (min-height: 600px) and (max-height: 800px) {
+  (min-width: 900px) and (max-width: 1279px) and (min-height: 600px) and (max-height: 799px) {
   body {
     overflow-y: auto;
     height: 100% !important;
@@ -798,9 +805,8 @@ body {
       width: 50% !important;
     }
 
-    .date,
-    .time {
-      font-size: 1rem;
+    .sec-info {
+      font-size: 0.75rem;
     }
 
     .mobile-date {
@@ -844,7 +850,7 @@ body {
             .work {
               flex-direction: column;
               align-items: flex-start;
-              padding: 1rem 1rem !important;
+              padding: 2em 1rem !important;
               cursor: pointer !important;
 
               p {
@@ -891,16 +897,13 @@ body {
 }
 
 @media only screen and (min-width: 1400px) and (max-width: 1600px) {
-  .date,
-  .time,
-  .country,
+  .sec-info,
   .recent,
   .currently-playing > *,
   .nav-title,
-  .footer-link,
   .work-details,
   .bio {
-    font-size: 1rem !important;
+    font-size: 0.85rem !important;
   }
 
   .dot {
@@ -908,7 +911,7 @@ body {
     height: 1rem !important;
   }
   .dot-info {
-    font-size: 1em !important;
+    font-size: 0.75rem !important;
   }
 
   .work p,
@@ -923,16 +926,12 @@ body {
 }
 
 @media only screen and (min-width: 1601px) and (max-width: 1800px) {
-  .date,
-  .time,
-  .country,
-  .recent,
+  .sec-info .recent,
   .currently-playing > *,
   .nav-title,
-  .footer-link,
   .work-details,
   .bio {
-    font-size: 1.15em !important;
+    font-size: 1rem !important;
   }
 
   .dot {
@@ -941,7 +940,7 @@ body {
   }
 
   .dot-info {
-    font-size: 1.15em !important;
+    font-size: 0.85rem !important;
   }
 
   .work p,

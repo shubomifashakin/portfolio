@@ -2,28 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Olashubomi Fashakin" />
+
+    <meta property="og:title" content="Olashubomi Fashakin" />
+    <meta property="og:description" content="Front-End Developer: Portfolio" />
+
+    <meta name="twitter:title" content="Olashubomi" />
+    <meta name="twitter:description" content="Front-End Developer: Portfolio" />
+
     <link rel="stylesheet" href="./css/folio.css" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <script defer type="module" src="/main.js"></script>
-    <title>SHUBOMI V1</title>
+    <script
+      src="https://kit.fontawesome.com/a76d23d87b.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>OLASHUBOMI V1</title>
   </head>
+
   <body>
     <div id="app">
       <span class="mouse"></span>
       <nav class="navbar">
         <div class="inner-nav">
           <div class="date-container">
-            <p class="date"></p>
+            <p class="date sec-info"></p>
             <p class="mobile-date"></p>
           </div>
 
           <div class="time-container">
-            <p class="time"></p>
+            <p class="time sec-info"></p>
           </div>
         </div>
 
         <div class="inner-nav-2">
-          <p class="country">LAGOS, NIGERIA</p>
+          <p class="country sec-info">LAGOS, NIGERIA</p>
         </div>
       </nav>
 
@@ -34,10 +49,8 @@
               <h2 class="recent">ABOUT</h2>
               <div class="names">
                 <h2 class="last-name name">FASHAKIN.</h2>
-                <div class="first-names name-container">
-                  <h2 class="first-name first-name-1 name">OLASHUBOMI.</h2>
-                  <h2 class="first-name first-name-2 name">OLASHUBOMI.</h2>
-                </div>
+
+                <h2 class="first-name name">OLASHUBOMI.</h2>
               </div>
 
               <p class="role">FRONT-END DEVELOPER</p>
@@ -53,18 +66,22 @@
                 <h2 class="recent">RECENT WORKS</h2>
 
                 <a
-                  href="https://545rejuve.netlify.app/"
+                  rel="noopener"
+                  href="https://frenzysocial.netlify.app/"
                   target="_blank"
                   class="work-3 work"
                 >
-                  <p class="work-name">REJUVE.</p>
+                  <p class="work-name">FRENZY.</p>
                   <span class="work-details"
-                    >Landing page for Rejuve, a skincare brand.<br />
-                    <span class="tech">Technologies -</span> Object Oriented
-                    Javascript, GSAP
+                    >A micro social media site which allows users engage with
+                    other real users<br />
+                    <span class="tech">Stack -</span>
+                    <span class="stack">React, TailwindCss, Supabase</span>
                   </span>
                 </a>
+
                 <a
+                  rel="noopener"
                   href="https://545listeningstats.netlify.app/"
                   target="_blank"
                   class="work-1 work"
@@ -74,8 +91,8 @@
                     A wesbite which uses the spotify api to enable spotify users
                     check their top 20 tracks/artists for the last 4 weeks &
                     also get recommendations for each track/artist.<br />
-                    <span class="tech">Technologies -</span> Object Oriented
-                    Javascript, GSAP
+                    <span class="tech">Stack -</span>
+                    <span class="stack">JS, GSAP</span>
                   </span>
                 </a>
 
@@ -91,24 +108,41 @@
                     users search for the meaning of words, their phonetic
                     transcriptions(voiced), synonyms, antonyms and how to use
                     the word in a sentence.<br />
-                    <span class="tech">Technologies -</span> Object Oriented
+                    <span class="tech">Stack -</span> Object Oriented
                     Javascript
                   </span>
                 </a> -->
 
                 <a
-                  href="https://wavelbankapp.netlify.app/"
+                  rel="noopener"
+                  href="https://student-bellscommsportal.netlify.app/"
                   target="_blank"
                   class="work-3 work"
                 >
-                  <p class="work-name">WAVEL BANK.</p>
+                  <p class="work-name">PADISTUDENT.</p>
                   <span class="work-details">
-                    A dummy bank site which allows users send money to one
-                    another, put some money aside in a stash, pay some bills,
-                    view recent transactions and many more. <br />View Github
-                    Repo for user login details.<br />
-                    <span class="tech">Technologies -</span> Object Oriented
-                    Javascript
+                    A web based content distribution portal which enables
+                    students of Bells University of Technology to receive course
+                    material and submit assignments to their lecturers.<br />
+                    <span class="tech">Stack -</span>
+                    <span class="stack">React, TailwindCss, Supabase</span>
+                  </span>
+                </a>
+
+                <a
+                  rel="noopener"
+                  href="https://lecturer-bellscommsportal.netlify.app/"
+                  target="_blank"
+                  class="work-3 work"
+                >
+                  <p class="work-name">PADILECTURER.</p>
+                  <span class="work-details">
+                    A web based content distribution portal which enables
+                    lecturers of Bells University of Technology to upload and
+                    receive course material and assignments from/to their
+                    student.<br />
+                    <span class="tech">Stack -</span>
+                    <span class="stack">React, TailwindCss, Supabase</span>
                   </span>
                 </a>
               </div>
@@ -121,24 +155,34 @@
 
                   <div class="currently">
                     <h2 class="currently-playing">
-                      LISTENING TO -
-                      <a class="inner-playing" href="#"></a>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        viewBox="0 0 1536 1536"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M1127 1082q0-32-30-51q-193-115-447-115q-133 0-287 34q-42 9-42 52q0 20 13.5 34.5T370 1051q5 0 37-8q132-27 243-27q226 0 397 103q19 11 33 11q19 0 33-13.5t14-34.5m96-215q0-40-35-61q-237-141-548-141q-153 0-303 42q-48 13-48 64q0 25 17.5 42.5T349 831q7 0 37-8q122-33 251-33q279 0 488 124q24 13 38 13q25 0 42.5-17.5T1223 867m108-248q0-47-40-70q-126-73-293-110.5T655 401q-204 0-364 47q-23 7-38.5 25.5T237 522q0 31 20.5 52t51.5 21q11 0 40-8q133-37 307-37q159 0 309.5 34t253.5 95q21 12 40 12q29 0 50.5-20.5T1331 619m205 149q0 209-103 385.5T1153.5 1433T768 1536t-385.5-103T103 1153.5T0 768t103-385.5T382.5 103T768 0t385.5 103T1433 382.5T1536 768"
+                        />
+                      </svg>
+                      - <span id="inner-playing"></span>
                     </h2>
-
-                    <!-- <button class="refresh-btn">REFRESH</button> -->
                   </div>
                 </div>
               </div>
 
               <div class="playlist-image">
-                <img src="" />
+                <img alt="playlist image" src="" />
               </div>
 
               <div class="error-section">
                 <span class="inner-error">
                   <p class="error-text">An error occurred</p>
 
-                  <button class="btn-1 retry-btn">Try Again</button>
+                  <button type="button" class="btn-1 retry-btn">
+                    Try Again
+                  </button>
                 </span>
               </div>
             </section>
@@ -156,7 +200,7 @@
 
       <footer>
         <div class="inner-footer">
-          <div class="navigation">
+          <nav class="navigation">
             <span class="dot-cont dot-cont-1">
               <div
                 class="dot dot-1 active-page"
@@ -185,18 +229,19 @@
             </span>
 
             <span class="dot-info"> CLICK DOTS TO CHANGE SECTIONS</span>
-          </div>
+          </nav>
 
           <a
-            class="footer-link"
-            href="mailto:subomifasakin@outlook.com?body=Hello Shubomi!"
-            >EMAIL ME</a
+            class="footer-link sec-info"
+            href="mailto:subomifasakin@outlook.com?body=Hello Olashubomi! I would like to work with you..."
+            >E-MAIL ME</a
           >
         </div>
 
         <div class="inner-footer-2">
           <a
-            class="footer-link"
+            rel="noopener"
+            class="footer-link sec-info"
             href="https://github.com/shubomifashakin"
             target="_blank"
             >GITHUB</a

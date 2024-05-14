@@ -7,6 +7,7 @@ class Playlist {
   playlistImageCont = document.querySelector(".playlist-image");
   innerSection = this.section3.querySelector(".inner-section");
   currentlyPlaying = this.section3.querySelector(".currently-playing");
+  innerPlaying = this.section3.querySelector("#inner-playing");
 
   playlistImg = this.playlistImageCont.querySelector("img");
 
@@ -105,16 +106,16 @@ class Playlist {
   parsePlayingHtml(playingData) {
     //if i am not listening to anything or whats currently playing is not a song, do this
     if (typeof playingData === "string" || playingData?.type !== "track") {
-      this.currentlyPlaying.innerHTML = "";
-      this.currentlyPlaying.insertAdjacentHTML(
+      this.innerPlaying.innerHTML = "";
+      this.innerPlaying.insertAdjacentHTML(
         "beforeend",
-        `<p class="not-playing">i am not listening to anything at the moment</p>`
+        `<p class="not-playing">Offline</p>`
       );
     } else {
-      this.currentlyPlaying.innerHTML = "";
-      this.currentlyPlaying.insertAdjacentHTML(
+      this.innerPlaying.innerHTML = "";
+      this.innerPlaying.insertAdjacentHTML(
         "beforeend",
-        ` <a class="inner-playing" target="_blank" href="${playingData.external_urls.spotify}">LISTENING TO - ${playingData.name} by ${playingData.artists[0].name}</a>`
+        `<a class="track-details" target="_blank" href="${playingData.external_urls.spotify}"> ${playingData.name} by ${playingData.artists[0].name}</a>`
       );
     }
   }

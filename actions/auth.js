@@ -1,5 +1,6 @@
 import * as airtable from "airtable";
 import { timeOut } from "./timeout";
+
 class auth {
   clientID = import.meta.env.VITE_CLIENT_ID;
   SPOTIFY_ID = import.meta.env.VITE_SPOTIFY_ID;
@@ -8,6 +9,7 @@ class auth {
 
   airtableId = import.meta.env.VITE_AIRTABLE_ID;
   airtableKey = import.meta.env.VITE_AIRTABLE_KEY;
+
   redirect_uri = import.meta.env.VITE_REDIRECT_URL;
   url = "https://accounts.spotify.com/api/token";
 

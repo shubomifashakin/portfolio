@@ -61,11 +61,9 @@ body {
   justify-content: space-between;
   width: 50%;
 }
-#app .navbar .date,
-#app .navbar .time,
-#app footer .date,
-#app footer .time {
-  font-size: 0.85rem;
+#app .navbar .sec-info,
+#app footer .sec-info {
+  font-size: 0.75rem;
   font-weight: 200;
 }
 #app .navbar .mobile-date,
@@ -78,11 +76,6 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-}
-#app .inner-nav-2 .country {
-  font-size: 0.85rem;
-  color: var(--text-color);
-  font-weight: 200;
 }
 #app .navbar {
   border-bottom: solid 1px var(--text-color);
@@ -143,7 +136,7 @@ body {
   transform-origin: bottom;
   display: inline-block;
 }
-#app main .inner-main .sections .section-1 .first-names .first-name-1 .hov-split {
+#app main .inner-main .sections .section-1 .first-names .first-name-1 .char {
   display: inline-block;
   transform: scaleY();
   transform-origin: inherit;
@@ -157,17 +150,17 @@ body {
   height: 100%;
   display: inline-block;
 }
-#app main .inner-main .sections .section-1 .first-names .first-name-2 .hov-split {
+#app main .inner-main .sections .section-1 .first-names .first-name-2 .char {
   transform-origin: inherit;
   font-size: inherit;
   transform: rotateX(90deg);
 }
-#app main .inner-main .sections .section-1 .hov-split {
+#app main .inner-main .sections .section-1 .char {
   display: inline-block;
   font-size: inherit;
   transition: linear 0.3s;
 }
-#app main .inner-main .sections .section-1 .hov-split:hover {
+#app main .inner-main .sections .section-1 .char:hover {
   color: var(--hover-color);
 }
 #app main .inner-main .sections .section-1 .role {
@@ -254,9 +247,14 @@ body {
   color: var(--text-color);
 }
 #app main .inner-main .sections .section-2 .inner-section .work .work-details .tech {
-  font-size: inherit;
+  font-size: 0.75rem;
   color: var(--hover-color);
   font-weight: inherit;
+  text-transform: uppercase;
+}
+#app main .inner-main .sections .section-2 .inner-section .work .work-details .stack {
+  color: #b3b3b3;
+  font-size: 0.75rem;
   text-transform: uppercase;
 }
 #app main .inner-main .sections .section-3 {
@@ -354,26 +352,35 @@ body {
 }
 #app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing {
   font-weight: 200;
-  font-size: 0.85rem;
+  font-size: 0.65rem;
   color: var(--text-color);
+  display: flex;
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
+  align-items: center;
   text-decoration: none;
   text-transform: uppercase;
 }
 #app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing .not-playing {
   color: gray;
   text-decoration: none;
+  font-size: 0.65rem;
 }
-#app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing > * {
+#app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing > #inner-playing {
   text-decoration: none;
   color: var(--text-color);
   text-transform: uppercase;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: inherit;
   font-weight: 600;
   transition: linear 0.3s;
 }
-#app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing > *:hover {
+#app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing > #inner-playing:hover {
   color: var(--hover-color);
+}
+#app main .inner-main .sections .section-3 .inner-section .headers .currently .currently-playing > #inner-playing > * {
+  font-size: inherit;
+  color: inherit;
 }
 #app main .inner-main .sections .section-3 .inner-section .recent {
   margin-left: 4rem;
@@ -491,7 +498,7 @@ body {
   justify-content: space-around;
 }
 #app footer .inner-footer .navigation .dot-info {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 200;
   color: var(--text-color);
   animation: blink 2s infinite forwards ease-out;
@@ -582,9 +589,8 @@ body {
   #app .inner-nav {
     width: 60% !important;
   }
-  #app .date,
-  #app .time {
-    font-size: 0.85rem;
+  #app .sec-info {
+    font-size: 0.75rem;
   }
   #app .date {
     display: none !important;
@@ -609,7 +615,8 @@ body {
     display: block;
   }
   #app main .inner-main .sections .section-1 .name {
-    font-size: 3rem !important;
+    font-size: 2.5rem !important;
+    line-height: 1.5em;
   }
   #app main .inner-main .sections .section-1 .bio {
     width: 100%;
@@ -620,14 +627,14 @@ body {
   #app main .inner-main .sections .section-2 .work {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem 1rem !important;
+    padding: 1.5em 1rem !important;
     cursor: pointer !important;
     opacity: 0.5;
   }
   #app main .inner-main .sections .section-2 .work p {
     width: 100% !important;
     padding: 1rem 0rem !important;
-    font-size: 3rem !important;
+    font-size: 2rem !important;
     cursor: inherit !important;
   }
   #app main .inner-main .sections .section-2 .work .work-details {
@@ -653,7 +660,7 @@ body {
     cursor: pointer !important;
   }
 }
-@media only screen and (min-width: 651px) and (max-width: 1200px) and (min-height: 600px), (min-width: 900px) and (max-width: 1350px) and (min-height: 600px) and (max-height: 800px) {
+@media only screen and (min-width: 651px) and (max-width: 1200px) and (min-height: 600px), (min-width: 900px) and (max-width: 1279px) and (min-height: 600px) and (max-height: 799px) {
   body {
     overflow-y: auto;
     height: 100% !important;
@@ -680,9 +687,8 @@ body {
   #app .inner-nav {
     width: 50% !important;
   }
-  #app .date,
-  #app .time {
-    font-size: 1rem;
+  #app .sec-info {
+    font-size: 0.75rem;
   }
   #app .mobile-date {
     display: none !important;
@@ -718,7 +724,7 @@ body {
   #app main .inner-main .sections .section-2 .work {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem 1rem !important;
+    padding: 2em 1rem !important;
     cursor: pointer !important;
   }
   #app main .inner-main .sections .section-2 .work p {
@@ -749,23 +755,20 @@ body {
   }
 }
 @media only screen and (min-width: 1400px) and (max-width: 1600px) {
-  .date,
-  .time,
-  .country,
+  .sec-info,
   .recent,
   .currently-playing > *,
   .nav-title,
-  .footer-link,
   .work-details,
   .bio {
-    font-size: 1rem !important;
+    font-size: 0.85rem !important;
   }
   .dot {
     width: 1rem !important;
     height: 1rem !important;
   }
   .dot-info {
-    font-size: 1em !important;
+    font-size: 0.75rem !important;
   }
   .work p,
   .playlist p {
@@ -777,23 +780,19 @@ body {
   }
 }
 @media only screen and (min-width: 1601px) and (max-width: 1800px) {
-  .date,
-  .time,
-  .country,
-  .recent,
+  .sec-info .recent,
   .currently-playing > *,
   .nav-title,
-  .footer-link,
   .work-details,
   .bio {
-    font-size: 1.15em !important;
+    font-size: 1rem !important;
   }
   .dot {
     width: 1.25rem !important;
     height: 1.25rem !important;
   }
   .dot-info {
-    font-size: 1.15em !important;
+    font-size: 0.85rem !important;
   }
   .work p,
   .playlist p {

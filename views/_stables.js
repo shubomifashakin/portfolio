@@ -49,6 +49,26 @@ class Stables {
         tl.reverse();
       });
     });
+
+    //when mouse is in the document show mouse
+    document.addEventListener("mousemove", (e) => {
+      gsap.to(this.mouseEl, { opacity: 1 });
+      this.mouseEl.style.top = `${e.clientY}px`;
+      this.mouseEl.style.left = `${e.clientX}px`;
+    });
+
+    //when mouse leaves doc hide mouse
+    document.addEventListener("mouseleave", (e) => {
+      gsap.to(this.mouseEl, { opacity: 0 });
+    });
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        document.title = "Please Work With Me!";
+      } else {
+        document.title = "SHUBOMI V1";
+      }
+    });
   }
 
   mouseHoverEffect() {
@@ -66,7 +86,7 @@ class Stables {
       c.addEventListener("mouseleave", () => {
         gsap.to(this.mouseEl, {
           background: "rgba(255, 0, 0, 0.3)",
-          borderRadius: "5px",
+          borderRadius: "0",
           padding: "0",
           borderStyle: "solid",
           boxShadow: "none",
@@ -76,22 +96,19 @@ class Stables {
   }
 
   currentDate() {
-    this.dateEl.textContent = new Intl.DateTimeFormat(navigator.language, {
+    this.dateEl.textContent = new Intl.DateTimeFormat("en-NG", {
       dateStyle: "full",
     })
       .format(new Date())
       .toUpperCase();
 
-    this.mobileDateEl.textContent = new Intl.DateTimeFormat(
-      navigator.language,
-      {
-        dateStyle: "short",
-      }
-    )
+    this.mobileDateEl.textContent = new Intl.DateTimeFormat("en-NG", {
+      dateStyle: "short",
+    })
       .format(new Date())
       .toUpperCase();
 
-    this.timeEl.textContent = new Intl.DateTimeFormat(navigator.language, {
+    this.timeEl.textContent = new Intl.DateTimeFormat("en-NG", {
       timeStyle: "medium",
       hourCycle: "h12",
       // hour12: true,
