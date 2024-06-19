@@ -250,10 +250,10 @@ body {
 
               p {
                 padding: 1rem 4rem;
-                width: fit-content;
                 width: -moz-fit-content;
                 width: -webkit-fit-content;
-                font-size: 4.5rem;
+                width: fit-content;
+                font-size: 4rem;
                 font-weight: 600;
                 text-decoration: none;
                 color: var(--text-color);
@@ -475,7 +475,7 @@ body {
 
               p {
                 width: 100%;
-                font-size: 4.5rem;
+                font-size: 4rem;
                 font-weight: 600;
                 text-decoration: none;
                 text-transform: uppercase;
@@ -916,7 +916,7 @@ body {
 
   .work p,
   .playlist p {
-    font-size: 4.5rem !important;
+    font-size: 4rem !important;
   }
 
   .section-1 .name,
